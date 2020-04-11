@@ -1,0 +1,6 @@
+^\.gitignore$
+^init\.R$
+^data-raw$
+^README\.Rmd$
+^LICENSE\.md$
+^\.travis\.yml$
