@@ -15,3 +15,10 @@ get_covid_state(state = "North Carolina", county = NULL)
 This functions hits the Johns Hopkins Covid Data Respository
 and filters down to North Carolina Data
 }
+\examples{
+\dontrun{
+get_covid_state()
+}
+
+
+}

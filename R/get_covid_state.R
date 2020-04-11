@@ -5,8 +5,10 @@
 #' 
 #' @param state with a default of North Carolina
 #' @param county the county, if desired
-#' @example 
+#' @examples \dontrun{
 #' get_covid_state()
+#' }
+#' 
 #' 
 #' @export
 #' 

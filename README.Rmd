@@ -23,3 +23,5 @@ knitr::opts_chunk$set(
 The goal of this package is to easily retrieve publically available data regarding the SARS-CoV19 outbreak that is occuring with focus on U.S. cases and associated deaths.
 
 These data are in no way complete and no guarantees are made.
+
+Some data sets

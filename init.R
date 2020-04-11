@@ -6,3 +6,6 @@ usethis::use_package_doc()
 usethis::git_vaccinate
 usethis::use_lifecycle_badge("experimental")
 usethis::use_travis()
+
+devtools::document()
+usethis::use_data_raw(name = "nc-specific")
