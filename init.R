@@ -1,4 +1,5 @@
 usethis::use_package("data.table")
+usethis::use_package("dplyr")
 usethis::use_data_raw("covid_mortality_data")
 usethis::use_readme_rmd()
 usethis::use_mit_license()

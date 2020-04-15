@@ -4,20 +4,25 @@
 \alias{get_covid_state}
 \title{Retrieve Covid19 Data}
 \usage{
-get_covid_state(state = "North Carolina", county = NULL)
+get_covid_state(state = "North Carolina", select_county = NULL)
 }
 \arguments{
 \item{state}{with a default of North Carolina}
 
-\item{county}{the county, if desired}
+\item{select_county}{the county, if desired}
 }
 \description{
 This functions hits the Johns Hopkins Covid Data Respository
-and filters down to North Carolina Data
+and filters down to North Carolina Data. Alternatively, it can
+retrieve any state.
 }
 \examples{
 \dontrun{
+# To get all counties
 get_covid_state()
+
+# To get a single county
+get_covid_state(select_county = "Guilford")
 }
 
 
