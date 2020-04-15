@@ -4,7 +4,9 @@
 \name{covid_mortality_data}
 \alias{covid_mortality_data}
 \title{Mortality Estimates from Verity Et Al for Covid}
-\format{data frame}
+\format{
+data frame
+}
 \usage{
 covid_mortality_data
 }

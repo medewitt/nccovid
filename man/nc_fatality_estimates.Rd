@@ -4,7 +4,9 @@
 \name{nc_fatality_estimates}
 \alias{nc_fatality_estimates}
 \title{Mortality and Hospitalization Estimates}
-\format{data.frame}
+\format{
+data.frame
+}
 \usage{
 nc_fatality_estimates
 }

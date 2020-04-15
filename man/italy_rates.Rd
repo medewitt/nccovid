@@ -4,7 +4,9 @@
 \name{italy_rates}
 \alias{italy_rates}
 \title{Italy Estimates}
-\format{a data.frame}
+\format{
+a data.frame
+}
 \usage{
 italy_rates
 }

@@ -4,7 +4,9 @@
 \name{triad_counties}
 \alias{triad_counties}
 \title{List of Triad Counties}
-\format{a vector}
+\format{
+a vector
+}
 \usage{
 triad_counties
 }

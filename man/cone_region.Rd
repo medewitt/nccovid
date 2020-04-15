@@ -4,7 +4,9 @@
 \name{cone_region}
 \alias{cone_region}
 \title{Regions in Cone Region of Service}
-\format{a vector}
+\format{
+a vector
+}
 \usage{
 cone_region
 }
