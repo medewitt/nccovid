@@ -52,6 +52,11 @@ get_covid_state <- function(state = "North Carolina", select_county = NULL){
 	
 	out_data <- data.table::merge.data.table(dat_cases,dat_death, by = c("state", "county", "date"))
 	
+	out_data <- out_data[,date := as.Date(date, "%m/%d/%y")]
+	
+	out_data <- out_data[,cases_daily := ifelse(cases_daily<0,0,cases_daily)]
+	out_data <- out_data[,deaths_daily := ifelse(deaths_daily<0,0,deaths_daily)]
+	
 	if(!is.null(select_county)){
 		out_data <- out_data[county==select_county]
 	}
