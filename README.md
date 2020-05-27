@@ -18,3 +18,17 @@ cases and associated deaths.
 These data are in no way complete and no guarantees are made.
 
 Some data sets
+
+## terms of use
+
+You should not rely on this Website for medical advice or guidance.
+
+The Website relies upon publicly available data that do not always
+agree. Authors hereby disclaims any and all representations and
+warranties with respect to the Website, including accuracy, fitness for
+use, reliability, completeness, and non-infringement of third party
+rights.
+
+These terms and conditions are subject to change. Your use of the
+Website constitutes your acceptance of these terms and conditions and
+any future modifications thereof.
