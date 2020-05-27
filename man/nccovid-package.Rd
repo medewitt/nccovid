@@ -4,7 +4,7 @@
 \name{nccovid-package}
 \alias{nccovid}
 \alias{nccovid-package}
-\title{nccovid: What the Package Does (One Line, Title Case)}
+\title{nccovid: Pull North Carolina Covid-19 Outbreak Information}
 \description{
 What the package does (one paragraph).
 }

@@ -3,4 +3,5 @@
 export(get_covid_state)
 importFrom(data.table,.I)
 importFrom(data.table,.N)
+importFrom(data.table,.SD)
 importFrom(data.table,`:=`)

@@ -1,4 +1,4 @@
-#' @importFrom data.table `:=` .N .I
+#' @importFrom data.table `:=` .N .I .SD
 #' @keywords internal
 "_PACKAGE"
 

@@ -1,6 +1,6 @@
 Package: nccovid
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Pull North Carolina Covid-19 Outbreak Information
+Version: 0.0.1
 Authors@R: 
     person(given = "Michael",
            family = "DeWitt",
@@ -12,6 +12,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
+Depends:
+    R (>= 2.10)
 Imports: 
     data.table,
     dplyr

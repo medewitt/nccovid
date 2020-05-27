@@ -1,0 +1,11 @@
+globalVariables({
+	c(
+		"cases_daily",
+		"cases_confirmed_cum",
+		"deaths_daily",
+		"deaths_confirmed_cum",
+		"patterns",
+		"county",
+		"Province_State"
+	)
+})

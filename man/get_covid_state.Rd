@@ -4,12 +4,19 @@
 \alias{get_covid_state}
 \title{Retrieve Covid19 Data}
 \usage{
-get_covid_state(state = "North Carolina", select_county = NULL)
+get_covid_state(
+  state = "North Carolina",
+  select_county = NULL,
+  data_source = c("cone", "hokpins")
+)
 }
 \arguments{
 \item{state}{with a default of North Carolina}
 
 \item{select_county}{the county, if desired}
+
+\item{data_source}{which data source you would like to use
+one of "cone" or "hopkins"}
 }
 \description{
 This functions hits the Johns Hopkins Covid Data Respository
