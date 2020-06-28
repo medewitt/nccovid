@@ -12,3 +12,7 @@ usethis::use_travis()
 
 devtools::document()
 usethis::use_data_raw(name = "nc-specific")
+
+usethis::use_pkgdown()
+
+pkgdown::build_site()
