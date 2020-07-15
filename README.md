@@ -17,7 +17,11 @@ cases and associated deaths.
 
 These data are in no way complete and no guarantees are made.
 
-Some data sets
+To install this package use the following:
+
+```r
+remotes::install_github("conedatascience/nccovid")
+```
 
 # Terms of Use
 
