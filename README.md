@@ -19,16 +19,12 @@ These data are in no way complete and no guarantees are made.
 
 Some data sets
 
-## terms of use
+# Terms of Use
 
 You should not rely on this Website for medical advice or guidance.
 
-The Website relies upon publicly available data that do not always
-agree. Authors hereby disclaims any and all representations and
-warranties with respect to the Website, including accuracy, fitness for
-use, reliability, completeness, and non-infringement of third party
-rights.
+The Website relies upon publicly available data that do not always agree. Cone Health hereby disclaims any and all representations and warranties with respect to the Website, including accuracy, fitness for use, reliability, completeness, and non-infringement of third party rights.
 
-These terms and conditions are subject to change. Your use of the
-Website constitutes your acceptance of these terms and conditions and
-any future modifications thereof.
+Any use of the Cone Health names, logos, trademarks, and/or trade dress in a factually inaccurate manner or for marketing, promotional or commercial purposes is strictly prohibited.
+
+These terms and conditions are subject to change. Your use of the Website constitutes your acceptance of these terms and conditions and any future modifications thereof.
