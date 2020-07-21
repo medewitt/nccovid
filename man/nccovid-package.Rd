@@ -6,7 +6,8 @@
 \alias{nccovid-package}
 \title{nccovid: Pull North Carolina Covid-19 Outbreak Information}
 \description{
-What the package does (one paragraph).
+This package allows users to easily retrieve data that have been pulled from the North Carolina
+    Department of Health and Human Services Covid-19 Dashboard.
 }
 \author{
 \strong{Maintainer}: Michael DeWitt \email{me.dewitt.jr@gmail.com} (\href{https://orcid.org/0000-0001-8940-1967}{ORCID})
