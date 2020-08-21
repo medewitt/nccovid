@@ -6,6 +6,13 @@ globalVariables({
 		"deaths_confirmed_cum",
 		"patterns",
 		"county",
-		"Province_State"
+		"Province_State",
+		"mobility_file",
+		"sub_region_1",
+		"sub_region_2",
+		"state_name",
+		"county_code",
+		"value",
+		"state"
 	)
 })
