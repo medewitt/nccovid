@@ -23,7 +23,7 @@ get_google_mobility <- function(counties = NULL){
 		counties <- sprintf("%s County",nccovid::nc_population$county[1:100])
 	}
 	
-	# mobility_file <- "https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv"
+	 mobility_file <- "https://www.gstatic.com/covid19/mobility/Global_Mobility_Report.csv"
 	# 
 	# mobility_data <- data.table::fread(mobility_file))
 	
