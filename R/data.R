@@ -33,3 +33,8 @@
 #' @source [U.S. Centers for Disease Prevention and Control (CDC) Social Vulnerability Index (SVI)](https://svi.cdc.gov/)
 #' @format a data.frame
 "nc_svi_county"
+
+#' North Carolina Population by County by Age
+#' @source ACS2018 Metrics
+#'@format a data.frame
+"nc_pop_age"

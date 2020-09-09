@@ -42,12 +42,38 @@ nc_aggregated <- raw_nc %>%
 																 `70-79` = c("Age 70 to 74 years", "Age 75 to 79 years"),
 																 `80+` = c("Age 80 to 84 years", "Age 85 to 89 years", "Age 85 years and older")
 	)) %>%
-	group_by(NAME, SEX, age_grp, age_grp2) %>%
+	mutate(age_grp3 = fct_collapse(AGEGROUP,
+																 `0-5` = c("Age 0 to 4 years"),
+																 `5-9` = "Age 5 to 9 years",
+																 `10-19` = c("Age 10 to 14 years"),
+																 `15-19` = "Age 15 to 19 years",
+																 `20-24` = c("Age 20 to 24 years"),
+																 `25-29` = c("Age 25 to 29 years"),
+																 `30-34` = c("Age 30 to 34 years"),
+																 `35-39` = c("Age 35 to 39 years"),
+																 `40-44` = c("Age 40 to 44 years"),
+																 `45-49` = c( "Age 45 to 49 years"),
+																 `50-54` = c("Age 50 to 54 years"),
+																 `55-59` = c( "Age 55 to 59 years"),
+																 `60-64` = c("Age 60 to 64 years"),
+																 `65-69` = c( "Age 65 to 69 years"),
+																 `70-74` = c("Age 70 to 74 years"),
+																 `75-79` = c("Age 75 to 79 years"),
+																 `80+` = c("Age 80 to 84 years", "Age 85 to 89 years", "Age 85 years and older")
+	)) %>%
+	group_by(NAME, SEX, age_grp, age_grp2, age_grp3) %>%
 	summarise(pop = sum(value)) %>%
 	mutate(prop = pop/sum(pop)) %>%
 	ungroup() %>%
 	mutate(NAME = stringr::str_trim(stringr::str_remove(NAME, "County, North Carolina")))
 
+nc_pop_age <- nc_aggregated %>% 
+	group_by(NAME, age_grp3) %>% 
+	summarise(pop = sum(pop)) %>% 
+	group_by(NAME) %>% 
+	mutate(prop = pop/sum(pop))
+
+usethis::use_data(nc_pop_age, overwrite = T)
 
 italy_rates <-tibble(
 	age_grp = rep(c('0-9', '10-19', '20-29', '30-39', '40-49', '50-59', '60-69', '70-79', '80-89', '90+'), 2),
