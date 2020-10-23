@@ -38,3 +38,14 @@
 #' @source ACS2018 Metrics
 #'@format a data.frame
 "nc_pop_age"
+
+#' Key North Carolina Events
+#' @source various and https://www.nc.gov/covid-19/staying-ahead-curve
+#' @format a data.frame
+"nc_events"
+
+#' NC Population by NCDHHS Age Band
+#' @source 2018 ACS Survey
+#' @format a data.frame
+
+"nc_pop_dhhs"
