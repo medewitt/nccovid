@@ -33,3 +33,7 @@ nc_pop_group <- county_info %>%
 nc_pop_dhhs <- nc_pop_group
 
 usethis::use_data(nc_pop_dhhs, overwrite = TRUE)
+
+
+# nc sex and demographics -------------------------------------------------
+
