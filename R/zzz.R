@@ -13,6 +13,8 @@ globalVariables({
 		"state_name",
 		"county_code",
 		"value",
-		"state"
+		"state",
+		".id",
+		"state_code"
 	)
 })

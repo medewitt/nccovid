@@ -24,3 +24,5 @@ Imports:
     tidyr,
     tigris,
     magrittr
+Suggests:
+    entropy

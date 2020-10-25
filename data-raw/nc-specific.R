@@ -128,3 +128,10 @@ fatality_estimates %>%
 	coord_flip()+
 	scale_y_continuous(labels = scales::percent_format(accuracy = 1))
 
+
+# nc fips -----------------------------------------------------------------
+
+dat <- data.table::fread(here::here("data-raw", "nc-fips.dat"), 
+												 col.names = c("county", "fips"))
+nc_county_fips=dat
+usethis::use_data(nc_county_fips)

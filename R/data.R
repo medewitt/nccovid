@@ -49,3 +49,11 @@
 #' @format a data.frame
 
 "nc_pop_dhhs"
+
+#' NC Fips by County
+#' @source https://www.lib.ncsu.edu/gis/countyfips
+#' @format a data.frame
+"nc_county_fips"
+
+
+
