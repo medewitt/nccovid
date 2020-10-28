@@ -55,5 +55,8 @@
 #' @format a data.frame
 "nc_county_fips"
 
-
+#' NC Biological Sex Information by County
+#' @source American Community Survey (2018 Vintage)
+#' @format a data.frame, with NC DHHS county level demographic metrics
+"nc_county_demos"
 
