@@ -1,0 +1,17 @@
+citHeader("To cite nccovid in publications use:")
+
+citEntry(entry = "Article",
+  title        = "nccovid: Pull North Carolina Covid-19 Outbreak Information Parameters",
+  author       = personList(as.person("Michael DeWitt")),
+  journal      = "-",
+  year         = "2020",
+  volume       = "-",
+  number       = "-",
+  pages        = "-",
+  doi          = "10.5281/zenodo.4157121",
+
+  textVersion  =
+  paste("Michael DeWitt (2020.",
+        "nccovid: Pull North Carolina Covid-19 Outbreak Information, ",
+        "DOI: 10.5281/zenodo.4157121")
+)
