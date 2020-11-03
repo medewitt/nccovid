@@ -4,6 +4,8 @@
 #' precalculated and available for download. These estimates are utilising
 #' the EpiNow2 package
 #' 
+#' @importFrom data.table `%chin%`
+#' 
 #' @param region a string or string vector, the region or county of interest
 #' @param variable a string or string vector, the measure of interest
 #' @export
@@ -33,7 +35,7 @@ pull_estimates <- function(region= NULL, variable ="R"){
 	# If no region specified, return all.
 	# If no variable define, return all
 	if(!is.null(variable)){
-		variables_available <- match.arg(variable, names(unique(raw_dat$variable)), several.ok = TRUE)
+		variables_available <- match.arg(variable, unique(raw_dat$variable), several.ok = TRUE)
 	}
 	
 	if(is.null(region) && is.null(variable)){
@@ -49,3 +51,11 @@ pull_estimates <- function(region= NULL, variable ="R"){
 	
 	
 }
+#' @examples {
+#' # Pull Just reproduction number
+#' dat <- pull_estimates(region = "Guilford")
+#' plot(median~date, data = dat, type ="b")
+#' abline(h = 1, col = "orange", lty = 2)
+#' 
+#' 
+#' }
