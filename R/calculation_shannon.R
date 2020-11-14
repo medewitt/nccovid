@@ -1,6 +1,24 @@
 #' Calculate Shannon Index for a Series
 #' @param incidence numeric, the case incidence
 #' @return double, the intensity of epidemic calculated via Shannon index
+#' @examples {
+#' dat <- nccovid::get_covid_state(c("Guilford", "Forsyth", "Mecklenburg", "Wake"))
+#' 
+#' library(tidyverse)
+#' dat %>% 
+#' 	group_by(county) %>% 
+#' 	nest() %>% 
+#' 	mutate(intensity = map_dbl(data, ~calculate_shannon(incidence = .x$cases_daily) )) %>% 
+#' 	ungroup() %>% 
+#' 	filter(county %in% nccovid::triad_counties) %>% 
+#' 	ggplot(aes(reorder(county,intensity), intensity))+
+#' 	geom_point()+
+#' 	coord_flip()+
+#' 	labs(
+#' 		title = "Epidemic Intensity"
+#' 	)
+#' 	}
+
 #' @export
 
 calculate_shannon <- function(incidence){
@@ -20,20 +38,3 @@ calculate_shannon <- function(incidence){
 	epidemic_intensity_norm.i
 }
 
-#' @examples {
-#' dat <- nccovid::get_covid_state(c("Guilford", "Forsyth", "Mecklenburg", "Wake"))
-#' 
-#' library(tidyverse)
-#' dat %>% 
-#' 	group_by(county) %>% 
-#' 	nest() %>% 
-#' 	mutate(intensity = map_dbl(data, ~calculate_shannon(incidence = .x$cases_daily) )) %>% 
-#' 	ungroup() %>% 
-#' 	filter(county %in% nccovid::triad_counties) %>% 
-#' 	ggplot(aes(reorder(county,intensity), intensity))+
-#' 	geom_point()+
-#' 	coord_flip()+
-#' 	labs(
-#' 		title = "Epidemic Intensity"
-#' 	)
-#' 	}

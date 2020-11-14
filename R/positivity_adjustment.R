@@ -12,6 +12,8 @@
 #' @export
 
 increase_cases <- function(observed_cases, pos_rate, m = 10.83, k = .5){
+	stopifnot(k>=0||k<=1)
+	stopifnot(m>0)
 	y <- observed_cases * pos_rate ^ k * m
 	return(y)
 }
@@ -29,6 +31,8 @@ increase_cases <- function(observed_cases, pos_rate, m = 10.83, k = .5){
 #' @export
 
 decrease_cases <- function(calculated_cases, pos_rate, m = 10.83, k = .5){
+	stopifnot(k>=0||k<=1)
+	stopifnot(m>0)
 	y <- calculated_cases /( pos_rate ^ k * m)
 	return(y)
 }
