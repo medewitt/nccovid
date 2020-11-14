@@ -8,6 +8,11 @@
 #' @param select_county the county, if desired
 #' @param data_source which data source you would like to use
 #'     one of "cone" or "hopkins"
+#' @param reporting_adj a boolean, default of \code{FALSE} which adjust
+#'     for two known issues with North Carolina Report occuring on 
+#'     2020-09-25 when all antigen tests were added and on 2020-11-13
+#'     where only 10 hours of data were reported and the remaining cases
+#'     were rolled into 2020-11-14.
 #' @examples \dontrun{
 #' # To get all counties
 #' get_covid_state()
@@ -19,7 +24,10 @@
 #' 
 #' @export
 #' 
-get_covid_state <- function(state = "North Carolina", select_county = NULL, data_source = c("cone", "hokpins")){
+get_covid_state <- function(state = "North Carolina", 
+														select_county = NULL, 
+														data_source = c("cone", "hokpins"),
+														reporting_adj = FALSE){
 	url_cases <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv"
 	url_deaths <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv"
 	
@@ -76,7 +84,28 @@ get_covid_state <- function(state = "North Carolina", select_county = NULL, data
 	}
 	
 	if(!is.null(select_county)){
-		out_data <- out_data[county==select_county]
+		out_data <- out_data[county%chin%select_county]
+	}
+	
+	if(reporting_adj){
+		# Add Lag for 2020-09-25
+		out_data <- out_data[,cases_daily:=data.table::fifelse(date==as.Date("2020-09-25"),
+																							 data.table::shift(cases_daily,1),
+																							 cases_daily), by = "county"]
+		out_data <- out_data[,deaths_daily:=data.table::fifelse(date==as.Date("2020-09-25"),
+																													 data.table::shift(deaths_daily,1),
+																														deaths_daily), by = "county"]
+		# Smooth Correction on 2020-11-13
+		target_dates <- c(as.Date("2020-11-13"),
+											as.Date("2020-11-14"))
+		
+		out_data <- out_data[date%in%target_dates,
+						 `:=`(
+						 	cases_daily = round(sum(cases_daily)/2),
+						 	deaths_daily = round(sum(deaths_daily)/2)
+						 ), by = "county"]
+		
+		
 	}
 	
 	out_data

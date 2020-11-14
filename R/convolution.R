@@ -18,7 +18,7 @@
 #' library(ggplot2)
 #' ggplot(out, aes(date))+
 #' 	geom_line(aes(y = true_cases))+
-#' 	geom_line(aes(y = reported_cases), color = "blue")
+#' 	geom_line(aes(y = reported), color = "blue")
 #' }
 
 epi_convolve <- function(cases, pdf, direction = "forward"){

@@ -1,6 +1,6 @@
 Package: nccovid
 Title: Pull North Carolina Covid-19 Outbreak Information
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     c(person(given = "Michael",
            family = "DeWitt",
@@ -25,4 +25,5 @@ Imports:
     tigris,
     magrittr
 Suggests:
-    entropy
+    entropy,
+    ggplot2
