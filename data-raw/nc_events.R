@@ -10,6 +10,6 @@ nc_events <- tibble::tribble(
 	"Mask Mandate", "2020-06-26"
 )
 
-nc_events <-as.Date(nc_events$date)
+nc_events$date <-as.Date(nc_events$date)
 
-usethis::use_data(nc_events)
+usethis::use_data(nc_events, overwrite = T)
