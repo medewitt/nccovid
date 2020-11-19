@@ -60,3 +60,7 @@
 #' @format a data.frame, with NC DHHS county level demographic metrics
 "nc_county_demos"
 
+#' NC Hospital Preparedness Coalitions
+#' @source https://easternhpc.com/state-coalition-map/
+#' @format a data.frame, with NC county name and associated coalition
+"nc_hc_coalitions"
