@@ -74,7 +74,7 @@ get_covid_state <- function(state = "North Carolina",
 	out_data <- out_data[,deaths_daily := ifelse(deaths_daily<0,0,deaths_daily)]
 	}else{
 		out_data <- data.table::fread("https://raw.githubusercontent.com/conedatascience/covid-data/master/data/timeseries/nc-cases-by-county.csv", 
-																			 colClasses = c("character", "character", "Date", "integer", "integer", "integer", "integer"), verbose = F)
+																			 colClasses = c("character", "character", "Date", "integer", "integer", "double","integer", "integer"), verbose = F)
 		fix_variable <- c("cases_daily", "deaths_daily", "cases_confirmed_cum", "deaths_confirmed_cum")
 		na_to_zero <- function(x) ifelse(is.na(x),0,x)
 		out_data <- out_data[, `:=`(cases_daily = na_to_zero(cases_daily),
