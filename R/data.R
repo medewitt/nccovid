@@ -64,3 +64,13 @@
 #' @source https://easternhpc.com/state-coalition-map/
 #' @format a data.frame, with NC county name and associated coalition
 "nc_hc_coalitions"
+
+#' NCDHHS Reported Delay Distribution
+#' 
+#' Reported testing and reporting delays were fit using the EpiNow2 
+#' boostrapped gamma fit. The reported delays were manually collected from
+#' the NCDHHS website.
+#' 
+#' @source https://covid19.ncdhhs.gov/dashboard/testing
+#' @format a list, with parameters for a gamma distribution fit to delays
+"nc_delay"
