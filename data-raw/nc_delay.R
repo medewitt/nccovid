@@ -29,7 +29,16 @@ lab_results <- c(
 	2.2,
 	1.9,
 	1.6,
-	1.7
+	1.7,
+	1.9,
+	2,
+	1.8,
+	1.1,
+	1.1,
+	1.3,
+	1.6,
+	1.6,
+	1.8
 )
 
 electronic_report <- c(
@@ -61,7 +70,17 @@ electronic_report <- c(
 	.6,
 	1,
 	1,
-	.6
+	.6,
+	1.1,
+	1,
+	1,
+	1.6,
+	1.3,
+	1.1,
+	1.1,
+	1,
+	.8
+	
 )
 
 dates <- seq.Date(from = as.Date("2020-10-29"), by = 1, length.out = length(lab_results))
