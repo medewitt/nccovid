@@ -38,7 +38,14 @@ lab_results <- c(
 	1.3,
 	1.6,
 	1.6,
-	1.8
+	1.8,
+	2.1,
+	1.9,
+	1.3,
+	1.4,
+	1.5,
+	1.3,
+	1.4
 )
 
 electronic_report <- c(
@@ -79,7 +86,14 @@ electronic_report <- c(
 	1.1,
 	1.1,
 	1,
-	.8
+	.8,
+	3.2,
+	1.9,
+	3.2,
+	3.2,
+	3.5,
+	3.1,
+	2.6
 	
 )
 
@@ -87,6 +101,21 @@ dates <- seq.Date(from = as.Date("2020-10-29"), by = 1, length.out = length(lab_
 
 combined_delay <- lab_results+electronic_report
 
+plot(dates, combined_delay, 
+		 type = "b", pch = 19, 
+		 ylab = "Days Delayed", 
+		 xlab = '', main = "North Carolina Reporting Delay")
+
 nc_delay <- EpiNow2::bootstrapped_dist_fit(combined_delay, dist = "gamma")
 
 usethis::use_data(nc_delay, overwrite = TRUE)
+
+
+# data viz on delay distribution ------------------------------------------
+
+plot(seq(0,10,.1),dgamma(seq(0,10,.1), shape = 1.67, scale = 1.32), 
+		 col = "orange", type = "l", xlab = "Reporting Delay (Days)", ylab = "Density", ylim = c(0,.5))
+lines(seq(0,10,.1),dgamma(seq(0,10,.1), shape = 7.7, scale = .37), col = "blue")
+title(main = "Shifting Reporting Delay Since ")
+#lines(seq(0,10,.1),dgamma(seq(0,10,.1), shape = nc_delay$mean, scale = .37), col = "blue")
+
