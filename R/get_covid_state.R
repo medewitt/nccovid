@@ -9,10 +9,11 @@
 #' @param data_source which data source you would like to use
 #'     one of "cone" or "hopkins"
 #' @param reporting_adj a boolean, default of \code{FALSE} which adjust
-#'     for two known issues with North Carolina Report occuring on 
+#'     for two known issues with North Carolina Report occurring on 
 #'     2020-09-25 when all antigen tests were added and on 2020-11-13
 #'     where only 10 hours of data were reported and the remaining cases
-#'     were rolled into 2020-11-14.
+#'     were rolled into 2020-11-14. Also corrects for reporting lapses on 
+#'     Thanksgiving and Christmas Eve/ Christmas Day.
 #' @examples \dontrun{
 #' # To get all counties
 #' get_covid_state()
@@ -26,7 +27,7 @@
 #' 
 get_covid_state <- function(state = "North Carolina", 
 														select_county = NULL, 
-														data_source = c("cone", "hokpins"),
+														data_source = c("cone", "hopkins"),
 														reporting_adj = FALSE){
 	url_cases <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv"
 	url_deaths <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv"
@@ -104,6 +105,16 @@ get_covid_state <- function(state = "North Carolina",
 						 	cases_daily = round(sum(cases_daily)/2),
 						 	deaths_daily = round(sum(deaths_daily)/2)
 						 ), by = "county"]
+		# Smooth Correction on 2020-12-24-2020-12-26
+		target_dates <- c(as.Date("2020-12-24"),
+											as.Date("2020-12-25"),
+											as.Date("2020-12-26"))
+		
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/3),
+												 	deaths_daily = round(sum(deaths_daily)/3)
+												 ), by = "county"]
 		
 		
 	}

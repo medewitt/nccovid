@@ -7,7 +7,7 @@
 get_covid_state(
   state = "North Carolina",
   select_county = NULL,
-  data_source = c("cone", "hokpins"),
+  data_source = c("cone", "hopkins"),
   reporting_adj = FALSE
 )
 }
@@ -20,10 +20,11 @@ get_covid_state(
 one of "cone" or "hopkins"}
 
 \item{reporting_adj}{a boolean, default of \code{FALSE} which adjust
-for two known issues with North Carolina Report occuring on 
+for two known issues with North Carolina Report occurring on 
 2020-09-25 when all antigen tests were added and on 2020-11-13
 where only 10 hours of data were reported and the remaining cases
-were rolled into 2020-11-14.}
+were rolled into 2020-11-14. Also corrects for reporting lapses on 
+Thanksgiving and Christmas Eve/ Christmas Day.}
 }
 \description{
 This functions hits the Johns Hopkins Covid Data Respository

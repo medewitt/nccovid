@@ -114,8 +114,8 @@ usethis::use_data(nc_delay, overwrite = TRUE)
 # data viz on delay distribution ------------------------------------------
 
 plot(seq(0,10,.1),dgamma(seq(0,10,.1), shape = 1.67, scale = 1.32), 
-		 col = "orange", type = "l", xlab = "Reporting Delay (Days)", ylab = "Density", ylim = c(0,.5))
+		 col = "orange", lwd = 2,type = "l", xlab = "Reporting Delay (Days)", ylab = "Density", ylim = c(0,.5))
 lines(seq(0,10,.1),dgamma(seq(0,10,.1), shape = 7.7, scale = .37), col = "blue")
-title(main = "Shifting Reporting Delay Since ")
+title(main = "Shifting Reporting Delay Since Dec 6")
 #lines(seq(0,10,.1),dgamma(seq(0,10,.1), shape = nc_delay$mean, scale = .37), col = "blue")
 
