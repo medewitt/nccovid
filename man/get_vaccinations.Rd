@@ -7,9 +7,9 @@
 get_vaccinations(county_list = NULL, add_population = TRUE)
 }
 \arguments{
-\item{add_population}{a boolean, default of TRUE to add a population}
+\item{county_list}{a string, the county to pull. default is all counties}
 
-\item{county}{a string, the county to pull. default is all counties}
+\item{add_population}{a boolean, default of TRUE to add a population}
 }
 \description{
 Pulled from <conedatascience/covid-data>

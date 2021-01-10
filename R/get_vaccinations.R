@@ -2,7 +2,7 @@
 #' 
 #' Pulled from <conedatascience/covid-data>
 #' 
-#' @param county a string, the county to pull. default is all counties
+#' @param county_list a string, the county to pull. default is all counties
 #' @param add_population a boolean, default of TRUE to add a population
 #' @examples {
 #' 
@@ -16,7 +16,7 @@ get_vaccinations <- function(county_list = NULL, add_population = TRUE){
 
 	dat$date <- as.Date(dat$date)
 	
-	if(!is.null(county)){
+	if(!is.null(county_list)){
 		dat <- dat[county %in% county_list]
 	}
 	
