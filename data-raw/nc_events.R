@@ -2,6 +2,7 @@
 
 nc_events <- tibble::tribble(
 	~"event", ~"date",
+	"Lockdown", "2020-03-27",
 	"Phase 1", "2020-05-08",
 	"Phase 2", "2020-05-22",
 	"Phase 2.5", "2020-09-05",
