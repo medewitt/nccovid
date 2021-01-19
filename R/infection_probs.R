@@ -1,6 +1,9 @@
 #' Infection Probability
 #' 
-#' @param D50 a double, #RNA for 50% infection probability (D50)
+#' Calculate Infection probability given D50
+#' 1-10^(log10(.5)/D50)
+#' 
+#' @param D50 a double, #RNA for 50 percent infection probability (D50)
 #' 
 #' @export
 
@@ -9,6 +12,9 @@ infection_probability <- function(D50 = 316){
 }
 
 #' RNA Content in Aerosol
+#' 
+#' Estimate the RNA Content in an Aerosol
+#' 
 #' @param resp_fluid a double, respiratory fluid RNA conc [/cm^3]
 #' @param wet_aerosol_diameter a double, mean wet aerosol diameter [um]
 #' 
@@ -20,6 +26,8 @@ rna_content <- function(resp_fluid = 500000000,
 }
 
 #' Aerosol Emission per Hour
+#' 
+#' Estimate the aerosol emission rate per hours
 #' 
 #' @param emission_breathing a double, emission while breathing cm^3
 #' @param emission_speaking a double, emission while speaking cm^3
@@ -35,6 +43,9 @@ aerosol_emission <- function(emission_breathing = .06, emission_speaking = .6,
 }
 
 #' Aerosol Concentration
+#' 
+#' Estimate the aerosol concentration given environment parameters
+#' 
 #' @param room_area a double, meters squared
 #' @param room_height a double, meters
 #' @inheritParams aerosol_emission

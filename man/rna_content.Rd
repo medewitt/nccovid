@@ -12,5 +12,5 @@ rna_content(resp_fluid = 5e+08, wet_aerosol_diamter = 5)
 \item{wet_aerosol_diameter}{a double, mean wet aerosol diameter [um]}
 }
 \description{
-RNA Content in Aerosol
+Estimate the RNA Content in an Aerosol
 }

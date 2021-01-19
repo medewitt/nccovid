@@ -27,5 +27,5 @@ aerosol_concentration(
 \item{resp_rate}{a double, the respiratory rate in liters per minute}
 }
 \description{
-Aerosol Concentration
+Estimate the aerosol concentration given environment parameters
 }

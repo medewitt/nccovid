@@ -10,7 +10,11 @@ epi_finalsize(r0)
 \item{r0}{a double, the reproduction number (can be basic or Reff)}
 }
 \description{
-Calculate the final size of an epidemic
+Calculate the final size of an epidemic. 
+Usethe the following logic:
+}
+\details{
+1 + 1/R0*W(-R0exp(-R0))
 }
 \examples{
 {

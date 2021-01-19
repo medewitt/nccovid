@@ -21,5 +21,5 @@ aerosol_emission(
 \item{resp_rate}{a double, the respiratory rate in liters per minute}
 }
 \description{
-Aerosol Emission per Hour
+Estimate the aerosol emission rate per hours
 }

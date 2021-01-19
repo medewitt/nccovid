@@ -2,9 +2,7 @@
 % Please edit documentation in R/lambertW.R
 \name{lambertW}
 \alias{lambertW}
-\title{Lambert W function
-Computes the Lambert W function, giving efficient solutions to the equation x*exp(x)==x
-lambertW(z, b = 0, maxiter = 10, eps = .Machine$double.eps, min.imag = 1e-09)}
+\title{Lambert W function}
 \usage{
 lambertW(z, b = 0, maxiter = 10, eps = .Machine$double.eps, min.imag = 1e-09)
 }
@@ -21,7 +19,6 @@ branch, 0 and -1 are the ones that can take non-complex values}
 \item{min.imag}{maximum magnitude of imaginary part to chop when returning solutions}
 }
 \description{
-Lambert W function
 Computes the Lambert W function, giving efficient solutions to the equation x*exp(x)==x
 lambertW(z, b = 0, maxiter = 10, eps = .Machine$double.eps, min.imag = 1e-09)
 }
@@ -33,5 +30,11 @@ The Lambert W function is also available in
 Mathematica (as the ProductLog function), and in Maple and Wolfram.
 }
 \references{
-
+Corless, Gonnet, Hare, Jeffrey, and Knuth (1996), "On the Lambert
+W Function", Advances in Computational Mathematics 5(4):329-359
+}
+\author{
+Nici Schraudolph <schraudo at inf.ethz.ch> (original
+  version (c) 1998), Ben Bolker (R translation)
+  See <https://stat.ethz.ch/pipermail/r-help/2003-November/042793.html>
 }

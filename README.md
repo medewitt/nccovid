@@ -10,8 +10,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![DOI](https://zenodo.org/badge/254908715.svg)](https://zenodo.org/badge/latestdoi/254908715)
 <!-- badges: end -->
 
-The goal of this package is to easily retrieve publically available data
-regarding the SARS-CoV19 outbreak that is occuring with focus on U.S.
+The goal of this package is to easily retrieve publicly available data
+regarding the SARS-CoV19 outbreak that is occurring with focus on U.S.
 cases and associated deaths.
 
 These data are in no way complete and no guarantees are made.

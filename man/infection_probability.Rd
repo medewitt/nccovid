@@ -7,8 +7,9 @@
 infection_probability(D50 = 316)
 }
 \arguments{
-\item{D50}{a double, #RNA for 50% infection probability (D50)}
+\item{D50}{a double, #RNA for 50 percent infection probability (D50)}
 }
 \description{
-Infection Probability
+Calculate Infection probability given D50
+1-10^(log10(.5)/D50)
 }
