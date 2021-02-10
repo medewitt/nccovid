@@ -6,27 +6,16 @@
 get_hospitalizations <- function(){
 	dat <- data.table::fread("https://raw.githubusercontent.com/conedatascience/covid-data/master/data/timeseries/hospitalisations.csv")
 	
-	names(dat)<- c("date", 
-								 "region_or_state", 
-								 "coalition", 
-								 "adult_icu_empty", 
-								 "adult_icu_full", 
-								 "adult_intensive_care_unit_staffed_bed_capacity", 
-								 "at_admission_confirmed_covid19_patients_in_24_hrs", 
-								 "at_admission_suspected_covid19_patients_in_24_hrs", 
-								 "ed_covid_visits_previous_day" ,
-								 "ed_total_visits_previous_day" ,
-								 "full_adult_icu_covid19_positive_patients", 
-								 "icu_licensed_beds", 
-								 "inpatient_empty_beds_all_types", 
-								 "inpatient_full_all_bed_types", 
-								 "licensed_inpatient_beds", 
-								 "number_of_covid_19_positive_patients_in_hospital", 
-								 "total_staffed_inpatient_capacity_all_bed_types", 
-								 "ventilator_available", 
-								 "ventilator_used_not_specific_to_covid_19")
+	names(dat)<- c("at_admission_suspected_covid19_patients_in_24_hrs", "ventilator_used_not_specific_to_covid_19", 
+								 "inpatient_full_all_bed_types", "ed_covid_visits_previous_day", 
+								 "parent_name", "at_admission_confirmed_covid19_patients_in_24_hrs", 
+								 "icu_licensed_beds", "inpatient_empty_beds_all_types", "adult_icu_empty", 
+								 "ventilator_available", "date", "full_adult_icu_covid19_positive_patients", 
+								 "licensed_inpatient_beds", "coalition", "adult_icu_ful", "adult_intensive_care_unit_staffed_bed_capacity", 
+								 "number_of_covid_19_positive_patients_in_hospital", "ed_total_visits_previous_day", 
+								 "total_staffed_inpatient_capacity_all_bed_types")
 	
-	dat$date <- as.Date(dat$date, "%m/%d/%Y")
+	#dat$date <- as.Date(dat$date, "%m/%d/%Y")
 	
 	last_date <- max(dat$date)
 	message(sprintf("Data valid as of: %s\nUse with caution.", as.character(last_date)))
