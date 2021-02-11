@@ -21,7 +21,7 @@ infection_probability <- function(D50 = 316){
 #' @export
 
 rna_content <- function(resp_fluid = 500000000, 
-												wet_aerosol_diamter = 5){
+												wet_aerosol_diameter = 5){
 	
 }
 

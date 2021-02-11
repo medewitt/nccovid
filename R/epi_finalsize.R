@@ -8,11 +8,11 @@
 #' 
 #' @param r0 a double, the reproduction number (can be basic or Reff)
 #' 
-#' @examples{
+#' @examples \dontrun{
 #' epi_finalsize(3.5)
 #' 
-#' plot(seq(1,3,.01), epi_finalsize(seq(1,3,.01)), 
-#'    xlab = "R", ylab = "Percent Infected", type = "l")
+#' plot(seq(1,3,.01), epi_finalsize(seq(1,3,.01)),xlab = "R", 
+#' ylab = "Percent Infected", type = "l")
 #' }
 #' 
 #' @export

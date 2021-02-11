@@ -15,6 +15,11 @@ globalVariables({
 		"value",
 		"state",
 		".id",
-		"state_code"
+		"state_code",
+		"cases",
+		"deaths",
+		"metric",
+		"population",
+		"week_of"
 	)
 })

@@ -41,7 +41,7 @@ get_county_covid_demographics <- function(demographic = "age_group", region = NU
 	#dat$date <- as.Date(dat$date, "%m/%d/%Y")
 	
 	field = ifelse(field == "k_12", "age_group", field)
-	dat = dat[,.(week_of, county, demographic,metric = get(field), cases, deaths)]
+	dat = dat[,list(week_of, county, demographic,metric = get(field), cases, deaths)]
 	
 	dat[,`:=` (cases = ifelse(is.na(cases),0,cases),
 						 deaths = ifelse(is.na(deaths),0,deaths))]
@@ -62,7 +62,7 @@ get_county_covid_demographics <- function(demographic = "age_group", region = NU
 																				 			 ifelse(metric == "American Indian and Alaska Native",
 																				 			 			 "American Indian Alaskan Native", metric)))]
 			
-			use_pop <- use_pop[,.(population = sum(population)), by = c("County", "metric", "category")]
+			use_pop <- use_pop[,list(population = sum(population)), by = c("County", "metric", "category")]
 		} else {
 			use_pop <- data.table::as.data.table(nccovid::nc_county_demos)[,c("County", "metric", "category", "population")]
 		}

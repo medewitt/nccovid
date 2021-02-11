@@ -1,4 +1,5 @@
 #' @importFrom data.table `:=` .N .I .SD `%chin%`
+#' @importFrom stats setNames
 #' @importFrom utils tail
 #' @keywords internal
 "_PACKAGE"

@@ -7,9 +7,9 @@
 get_county_tests(county_select = NULL)
 }
 \arguments{
-\item{county}{a string, the county of counties of interest}
+\item{county_select}{a string, the county of counties of interest}
 }
 \description{
 Pulling information on tests and percent positive at the 
-county level
+county level. Notes that these data are updated manually.
 }

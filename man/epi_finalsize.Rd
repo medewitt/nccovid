@@ -17,11 +17,11 @@ Usethe the following logic:
 1 + 1/R0*W(-R0exp(-R0))
 }
 \examples{
-{
+\dontrun{
 epi_finalsize(3.5)
 
-plot(seq(1,3,.01), epi_finalsize(seq(1,3,.01)), 
-   xlab = "R", ylab = "Percent Infected", type = "l")
+plot(seq(1,3,.01), epi_finalsize(seq(1,3,.01)),xlab = "R", 
+ylab = "Percent Infected", type = "l")
 }
 
 }

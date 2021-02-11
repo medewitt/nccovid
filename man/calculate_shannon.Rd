@@ -16,15 +16,20 @@ double, the intensity of epidemic calculated via Shannon index
 Calculate Shannon Index for a Series
 }
 \examples{
-{
 dat <- nccovid::get_covid_state(c("Guilford", "Forsyth", "Mecklenburg", "Wake"))
 
-library(tidyverse)
-dat \%>\% 
+library(dplyr)
+library(ggplot2)
+
+counties <- unique(dat$county)
+entropy_values = dat \%>\% 
 	group_by(county) \%>\% 
-	nest() \%>\% 
-	mutate(intensity = map_dbl(data, ~calculate_shannon(incidence = .x$cases_daily) )) \%>\% 
-	ungroup() \%>\% 
+	dplyr::group_split() \%>\% 
+	lapply( function(x) calculate_shannon(incidence = x$cases_daily) ) \%>\%
+	unlist()
+	
+entropy_values = data.frame(county = counties, intensity = entropy_values)
+	entropy_values \%>\% 
 	filter(county \%in\% nccovid::triad_counties) \%>\% 
 	ggplot(aes(reorder(county,intensity), intensity))+
 	geom_point()+
@@ -32,5 +37,5 @@ dat \%>\%
 	labs(
 		title = "Epidemic Intensity"
 	)
-	}
+
 }

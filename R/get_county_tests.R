@@ -1,9 +1,9 @@
 #' Pull Testing Information at County Level
 #' 
 #' Pulling information on tests and percent positive at the 
-#' county level
+#' county level. Notes that these data are updated manually.
 #' 
-#' @param county a string, the county of counties of interest
+#' @param county_select a string, the county of counties of interest
 #' @export
 
 get_county_tests <- function(county_select = NULL){
@@ -18,6 +18,7 @@ get_county_tests <- function(county_select = NULL){
 		dat <- dat[county %in% county_select]
 	}
 	
+	message("Data updated as of: ", max(dat$date))
 	dat
 	
 }

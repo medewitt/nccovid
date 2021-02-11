@@ -4,7 +4,7 @@
 \alias{rna_content}
 \title{RNA Content in Aerosol}
 \usage{
-rna_content(resp_fluid = 5e+08, wet_aerosol_diamter = 5)
+rna_content(resp_fluid = 5e+08, wet_aerosol_diameter = 5)
 }
 \arguments{
 \item{resp_fluid}{a double, respiratory fluid RNA conc [/cm^3]}

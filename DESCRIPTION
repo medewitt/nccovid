@@ -23,7 +23,6 @@ Imports:
     stringr,
     tidyr,
     tigris,
-    magrittr
-Suggests:
+    magrittr,
     entropy,
     ggplot2
