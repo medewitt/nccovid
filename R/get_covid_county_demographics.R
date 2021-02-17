@@ -33,7 +33,7 @@ get_county_covid_demographics <- function(demographic = "age_group", region = NU
 	dat <- data.table::fread(url, na.strings = "")
 	
 	names(dat) <- c("demographic", "race", "age_group", "deaths", "gender", "week_of", 
-									"county", "hispanic", "cases")
+									"county", "ethnicity", "cases")
 	dat[,demographic:=gsub(" |-","_",tolower(demographic))]
 	dat[,demographic:=ifelse(demographic=="age_group_b_k_12", "k_12", demographic)]
 	
