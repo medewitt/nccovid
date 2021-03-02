@@ -136,6 +136,15 @@ get_covid_state <- function(state = "North Carolina",
 												 	deaths_daily = round(sum(deaths_daily)/2)
 												 ), by = "county"]
 		
+		target_dates <- c(as.Date("2021-02-28"),
+											as.Date("2021-03-01"))
+		
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/2),
+												 	deaths_daily = round(sum(deaths_daily)/2)
+												 ), by = "county"]
+		
 		
 		
 	}
