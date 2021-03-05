@@ -34,21 +34,23 @@ get_vaccinations_demo <- function(county_list = NULL,
 		dat <- dat[county %in% county_list]
 	}
 	
-	m <- match.arg(measure, c('distribution', 'per capita'),several.ok = T)
-	m <- gsub('\\s','',stringr::str_to_title(m))
-	if(!is.null(m)){
+
+	if(!is.null(measure)){
+		m <- match.arg(measure, c('distribution', 'per capita'),several.ok = T)
+		m <- gsub('\\s','',stringr::str_to_title(m))
 		dat <- dat[measure %in% m]
 	}
 	
-	demo <- match.arg(demographic, c("race", "age", "ethnicity", "sex"),
-										several.ok = T)
-	demo <- gsub('Age', 'Age Group', stringr::str_to_title(demo))
-	if(!is.null(m)){
+	
+	if(!is.null(demographic)){
+		demo <- match.arg(demographic, c("race", "age", "ethnicity", "sex"),
+											several.ok = T)
+		demo <- gsub('Age', 'Age Group', stringr::str_to_title(demo))
 		dat <- dat[demographic %in% demo]
 	}
 	
-	d <- dose
-	if(!is.null(d)){
+	if(!is.null(dose)){
+		d <- dose
 		if(!d %in% 1:2)stop("dose most be 1, 2, or NULL")
 		dat <- dat[dose %in% d]
 	}
