@@ -2,42 +2,29 @@
 % Please edit documentation in R/get_vaccinations_demo.R
 \name{get_vaccinations_demo}
 \alias{get_vaccinations_demo}
-\title{Pull Vaccination Rates by County and Demographic}
+\title{Pull Vaccinations by County and Demographic}
 \usage{
-get_vaccinations_demo(
-  county_list = NULL,
-  measure = NULL,
-  demographic = NULL,
-  dose = NULL,
-  latest = FALSE
-)
+get_vaccinations_demo(county_list = NULL, demographic = NULL, status = NULL)
 }
 \arguments{
-\item{county_list}{a string, the county to pull. default is all counties AND 
-a North Carolina roll up. "North Carolina" can be supplied as a county.}
-
-\item{measure}{a string, the measure requested. one of "distribution" or
-"per capita" for pulling the distribution of vaccine (adds to 1 within the 
-demographic) or the vaccinate rate per capita within the demographic, 
-respectively. default is all measures.}
+\item{county_list}{a string, the county to pull. default is all counties.}
 
 \item{demographic}{a string, the demographic requested. one or more of "race", 
 "age", "ethnicity", "sex". default is all demographics}
 
-\item{dose}{integer, the dose to pull (1 or 2). default is all doses.}
-
-\item{latest}{logical, whether to pull only the latest vaccination record or
-a full time series. default F pulls full time series}
+\item{status}{string, either 'partial' or 'full' for number of people with
+partially or fully vaccinated. Default of NULL returns both.}
 }
 \description{
-Pulled from <conedatascience/covid-data>. The columns vax_prop and vax_n return
-the vaccination proportion and vaccination counts.
+Pulled from <conedatascience/covid-data>. The column vax_n returns
+vaccination counts. Population references are available for the user to 
+calculate distribution and/or per capita rates.
 }
 \examples{
 {
 
-get_vaccinations_demo(county_list = "Guilford", measure = 'distribution',
-                      demographic = 'race', dose = 1, latest = TRUE)
+get_vaccinations_demo(county_list = "Guilford",
+                      demographic = 'race', status = 'partial', latest = TRUE)
 
 }
 }

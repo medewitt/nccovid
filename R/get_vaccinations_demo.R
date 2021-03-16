@@ -9,8 +9,6 @@
 #'      "age", "ethnicity", "sex". default is all demographics
 #' @param status string, either 'partial' or 'full' for number of people with
 #'      partially or fully vaccinated. Default of NULL returns both.
-#' @param latest logical, whether to pull only the latest vaccination record or
-#'     a full time series. default F pulls full time series
 #' @examples {
 #' 
 #' get_vaccinations_demo(county_list = "Guilford",
@@ -21,7 +19,7 @@
 
 get_vaccinations_demo <- function(county_list = NULL,
 																	demographic = NULL,
-																	status = NULL, latest = FALSE){
+																	status = NULL){
 	dat <- data.table::fread("https://raw.githubusercontent.com/conedatascience/covid-data/master/data/timeseries/vax-demos.csv")
 	dat <- dat[date_pulled==max(date_pulled)]
 	
@@ -40,11 +38,6 @@ get_vaccinations_demo <- function(county_list = NULL,
 	if(!is.null(status)){
 		stat <- match.arg(status, c('partial', 'full'), several.ok = TRUE)
 		dat <- dat[status %in% stat]
-	}
-	
-	if(!is.logical(latest))stop('latest must be a logical T/F')
-	if(latest){
-		dat <- dat[week_of==max(week_of)]
 	}
 
 	return(dat)
