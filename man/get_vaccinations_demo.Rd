@@ -24,7 +24,7 @@ calculate distribution and/or per capita rates.
 {
 
 get_vaccinations_demo(county_list = "Guilford",
-                      demographic = 'race', status = 'partial', latest = TRUE)
+                      demographic = 'race', status = 'partial')
 
 }
 }

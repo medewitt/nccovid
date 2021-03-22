@@ -20,6 +20,7 @@ globalVariables({
 		"deaths",
 		"metric",
 		"population",
-		"week_of"
+		"week_of",
+		"date_pulled"
 	)
 })

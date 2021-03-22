@@ -13,7 +13,11 @@
 #'     2020-09-25 when all antigen tests were added and on 2020-11-13
 #'     where only 10 hours of data were reported and the remaining cases
 #'     were rolled into 2020-11-14. Also corrects for reporting lapses on 
-#'     Thanksgiving and Christmas Eve/ Christmas Day.
+#'     Thanksgiving and Christmas Eve/ Christmas Day. On 2021-02-28 the dashboard 
+#'     was taken down for maintenance and thus unavailable on that day.
+#'     Additionally note that on 2021-03-13 NCDHHS elected to not report data 
+#'     on Sundays. On 2021-03-19 NCDHHS notified users that on 2021-03-26 data 
+#'     would be updated Monday - Friday. 
 #' @examples \dontrun{
 #' # To get all counties
 #' get_covid_state()
@@ -169,19 +173,28 @@ get_covid_state <- function(state = "North Carolina",
 		
 		out_data <- out_data[date%in%target_dates,
 												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/3),
+												 	deaths_daily = round(sum(deaths_daily)/3)
+												 ), by = "county"]
+		
+		target_dates <- c(as.Date("2021-03-21"),
+											as.Date("2021-03-22"))
+		
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
 												 	cases_daily = round(sum(cases_daily)/2),
 												 	deaths_daily = round(sum(deaths_daily)/2)
 												 ), by = "county"]
 		
-		dat_range_sunday = seq.Date(from = as.Date("2021-03-21"), length.out = 50, by = "week")
-		dat_range_monday = seq.Date(from = as.Date("2021-03-22"), length.out = 50, by = "week")
+		dat_range_saturday = seq.Date(from = as.Date("2021-03-27"), length.out = 50, by = "week")
+		dat_range_monday = seq.Date(from = as.Date("2021-03-29"), length.out = 50, by = "week")
 		
-		for(i in seq_along(dat_range_sunday)){
-			target_dates = c(dat_range_sunday[i], dat_range_monday[i])
+		for(i in seq_along(dat_range_saturday)){
+			target_dates = c(dat_range_saturday[i], dat_range_monday[i])
 			out_data <- out_data[date%in%target_dates,
 													 `:=`(
-													 	cases_daily = round(sum(cases_daily)/2),
-													 	deaths_daily = round(sum(deaths_daily)/2)
+													 	cases_daily = round(sum(cases_daily)/3),
+													 	deaths_daily = round(sum(deaths_daily)/3)
 													 ), by = "county"]
 		}
 		

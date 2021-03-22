@@ -14,6 +14,7 @@ This package allows users to easily retrieve data that have been pulled from the
 
 Authors:
 \itemize{
+  \item Jennifer Wenner
   \item  Cone Health [copyright holder]
 }
 

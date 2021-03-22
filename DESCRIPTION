@@ -7,6 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "me.dewitt.jr@gmail.com",
            comment = c(ORCID = "0000-0001-8940-1967")),
+     person(given = "Jennifer",
+           family = "Wenner",
+           role = c("aut")),
            person(family = "Cone Health", role = c("aut", "cph"))
            )
 Description: This package allows users to easily retrieve data that have been pulled from the North Carolina
