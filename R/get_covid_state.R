@@ -200,5 +200,9 @@ get_covid_state <- function(state = "North Carolina",
 		
 	}
 	
+	while(out_data[, .SD[tail(1)], by = "county"][,sum(cases_daily)]==0){
+		out_data= out_data[, .SD[tail(-1)], by = "county"]
+	}
+	message("Last date available: ", max(out_data$date))
 	out_data
 }
