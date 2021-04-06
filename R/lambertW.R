@@ -15,14 +15,18 @@
 #' of transcendental equations involving exponentials or logarithms.
 #' The Lambert W function is also available in
 #' Mathematica (as the ProductLog function), and in Maple and Wolfram.
+#' 
 #' @references Corless, Gonnet, Hare, Jeffrey, and Knuth (1996), "On the Lambert
 #' W Function", Advances in Computational Mathematics 5(4):329-359
 #' @author Nici Schraudolph <schraudo at inf.ethz.ch> (original
 #'   version (c) 1998), Ben Bolker (R translation)
 #'   See <https://stat.ethz.ch/pipermail/r-help/2003-November/042793.html>
+#' 
 #' @export
-lambertW = function(z,b=0,maxiter=10,eps=.Machine$double.eps,
+#' 
+lambertW = function(z, b=0, maxiter=10, eps=.Machine$double.eps,
 										min.imag=1e-9) {
+	
 	if (any(round(Re(b)) != b))
 		stop("branch number for W must be an integer")
 	if (!is.complex(z) && any(z<0)) z=as.complex(z)

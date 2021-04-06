@@ -17,7 +17,8 @@
 #'     was taken down for maintenance and thus unavailable on that day.
 #'     Additionally note that on 2021-03-13 NCDHHS elected to not report data 
 #'     on Sundays. On 2021-03-19 NCDHHS notified users that on 2021-03-26 data 
-#'     would be updated Monday - Friday. 
+#'     would be updated Monday - Friday. Updated for Good Friday in which no results
+#'     were posted.
 #' @examples \dontrun{
 #' # To get all counties
 #' get_covid_state()
@@ -190,13 +191,24 @@ get_covid_state <- function(state = "North Carolina",
 		dat_range_monday = seq.Date(from = as.Date("2021-03-29"), length.out = 50, by = "week")
 		
 		for(i in seq_along(dat_range_saturday)){
-			target_dates = c(dat_range_saturday[i], dat_range_monday[i])
+			target_dates = seq.Date(dat_range_saturday[i], dat_range_monday[i], by = "day")
 			out_data <- out_data[date%in%target_dates,
 													 `:=`(
 													 	cases_daily = round(sum(cases_daily)/3),
 													 	deaths_daily = round(sum(deaths_daily)/3)
 													 ), by = "county"]
 		}
+		
+		target_dates <- c(as.Date("2021-04-02"),
+											as.Date("2021-04-03"),
+											as.Date("2021-04-04"),
+											as.Date("2021-04-05")
+		)
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/4),
+												 	deaths_daily = round(sum(deaths_daily)/4)
+												 ), by = "county"]
 		
 	}
 	

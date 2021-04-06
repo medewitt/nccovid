@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Retrieve Covid19 Data — get_covid_state • nccovid</title>
+<title>Lambert W function — lambertW • nccovid</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,9 @@
 
 
 
-<meta property="og:title" content="Retrieve Covid19 Data — get_covid_state" />
-<meta property="og:description" content="This functions hits the Johns Hopkins Covid Data Respository
-and filters down to North Carolina Data. Alternatively, it can
-retrieve any state." />
+<meta property="og:title" content="Lambert W function — lambertW" />
+<meta property="og:description" content="Computes the Lambert W function, giving efficient solutions to the equation x*exp(x)==x
+lambertW(z, b = 0, maxiter = 10, eps = .Machine$double.eps, min.imag = 1e-09)" />
 
 
 
@@ -108,68 +107,61 @@ retrieve any state." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Retrieve Covid19 Data</h1>
+    <h1>Lambert W function</h1>
     
-    <div class="hidden name"><code>get_covid_state.Rd</code></div>
+    <div class="hidden name"><code>lambertW.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This functions hits the Johns Hopkins Covid Data Respository
-and filters down to North Carolina Data. Alternatively, it can
-retrieve any state.</p>
+    <p>Computes the Lambert W function, giving efficient solutions to the equation x*exp(x)==x
+lambertW(z, b = 0, maxiter = 10, eps = .Machine$double.eps, min.imag = 1e-09)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_covid_state</span><span class='op'>(</span>
-  state <span class='op'>=</span> <span class='st'>"North Carolina"</span>,
-  select_county <span class='op'>=</span> <span class='cn'>NULL</span>,
-  data_source <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"cone"</span>, <span class='st'>"hopkins"</span><span class='op'>)</span>,
-  reporting_adj <span class='op'>=</span> <span class='cn'>FALSE</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>lambertW</span><span class='op'>(</span><span class='va'>z</span>, b <span class='op'>=</span> <span class='fl'>0</span>, maxiter <span class='op'>=</span> <span class='fl'>10</span>, eps <span class='op'>=</span> <span class='va'>.Machine</span><span class='op'>$</span><span class='va'>double.eps</span>, min.imag <span class='op'>=</span> <span class='fl'>1e-09</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>state</th>
-      <td><p>with a default of North Carolina</p></td>
+      <th>z</th>
+      <td><p>(complex) vector of values for which to compute the function</p></td>
     </tr>
     <tr>
-      <th>select_county</th>
-      <td><p>the county, if desired</p></td>
+      <th>b</th>
+      <td><p>integer, defaults to 0. vector of branches: b=0 specifies the principal
+branch, 0 and -1 are the ones that can take non-complex values</p></td>
     </tr>
     <tr>
-      <th>data_source</th>
-      <td><p>which data source you would like to use
-one of "cone" or "hopkins"</p></td>
+      <th>maxiter</th>
+      <td><p>maximum numbers of iterations for convergence</p></td>
     </tr>
     <tr>
-      <th>reporting_adj</th>
-      <td><p>a boolean, default of <code>FALSE</code> which adjust
-for two known issues with North Carolina Report occurring on 
-2020-09-25 when all antigen tests were added and on 2020-11-13
-where only 10 hours of data were reported and the remaining cases
-were rolled into 2020-11-14. Also corrects for reporting lapses on 
-Thanksgiving and Christmas Eve/ Christmas Day. On 2021-02-28 the dashboard 
-was taken down for maintenance and thus unavailable on that day.
-Additionally note that on 2021-03-13 NCDHHS elected to not report data 
-on Sundays. On 2021-03-19 NCDHHS notified users that on 2021-03-26 data 
-would be updated Monday - Friday. Updated for Good Friday in which no results
-were posted.</p></td>
+      <th>eps</th>
+      <td><p>convergence tolerance</p></td>
+    </tr>
+    <tr>
+      <th>min.imag</th>
+      <td><p>maximum magnitude of imaginary part to chop when returning solutions</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='co'># To get all counties</span>
-<span class='fu'>get_covid_state</span><span class='op'>(</span><span class='op'>)</span>
+    <p>Compute the Lambert W function of z.  This function satisfies
+W(z)*exp(W(z)) = z, and can thus be used to express solutions
+of transcendental equations involving exponentials or logarithms.
+The Lambert W function is also available in
+Mathematica (as the ProductLog function), and in Maple and Wolfram.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-<span class='co'># To get a single county</span>
-<span class='fu'>get_covid_state</span><span class='op'>(</span>select_county <span class='op'>=</span> <span class='st'>"Guilford"</span><span class='op'>)</span>
-<span class='op'>}</span>
+    <p>Corless, Gonnet, Hare, Jeffrey, and Knuth (1996), "On the Lambert
+W Function", Advances in Computational Mathematics 5(4):329-359</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
+    <p>Nici Schraudolph &lt;schraudo at inf.ethz.ch&gt; (original
+  version (c) 1998), Ben Bolker (R translation)
+  See &lt;https://stat.ethz.ch/pipermail/r-help/2003-November/042793.html&gt;</p>
 
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -8,6 +8,8 @@
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![DOI](https://zenodo.org/badge/254908715.svg)](https://zenodo.org/badge/latestdoi/254908715)
+[![R build
+status](https://github.com/conedatascience/nccovid/workflows/R-CMD-check/badge.svg)](https://github.com/conedatascience/nccovid/actions)
 <!-- badges: end -->
 
 The goal of this package is to easily retrieve publicly available data
