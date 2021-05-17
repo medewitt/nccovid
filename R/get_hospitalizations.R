@@ -12,8 +12,9 @@ get_hospitalizations <- function(){
 								 "icu_licensed_beds", "inpatient_empty_beds_all_types", "adult_icu_empty", 
 								 "ventilator_available", "date", "full_adult_icu_covid19_positive_patients", 
 								 "licensed_inpatient_beds", "coalition", "adult_icu_ful", "adult_intensive_care_unit_staffed_bed_capacity", 
-								 "number_of_covid_19_positive_patients_in_hospital", "ed_total_visits_previous_day", 
-								 "total_staffed_inpatient_capacity_all_bed_types")
+								 "number_of_covid_19_positive_patients_in_hospital", "hospitalized_and_ventilated_covid_inpatient_count", 
+								 "ed_total_visits_previous_day", "total_staffed_inpatient_capacity_all_bed_types"
+	)
 	
 	#dat$date <- as.Date(dat$date, "%m/%d/%Y")
 	

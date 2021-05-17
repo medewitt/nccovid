@@ -210,11 +210,23 @@ get_covid_state <- function(state = "North Carolina",
 												 	deaths_daily = round(sum(deaths_daily)/4)
 												 ), by = "county"]
 		
+		out_data <- out_data[,`:=`(cases_daily_roll = round(data.table::frollmean(cases_daily, 14))), 
+												 by = "county"]
+		
+		start_smooth <- as.Date("2021-05-01")
+		end_smooth <- as.Date("2021-05-21")
+		
+		out_data <- out_data[,cases_daily := ifelse(county %in% c("Alamance", "Guilford") & date %in% seq.Date(start_smooth,
+																																																					 end_smooth, by = "day"),
+																								cases_daily_roll, cases_daily)][,cases_daily_roll:=NULL]
+		
+		
 	}
 	
 	while(out_data[,.SD[.N], by = "county"][,sum(cases_daily)]<1){
 		out_data= out_data[out_data[, if (.N > 1) head(.I, -1) else .I, by = "county"]$V1]
 	}
+	
 	message("Last date available: ", max(out_data$date))
 	out_data
 }

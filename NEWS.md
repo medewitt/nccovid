@@ -1,3 +1,8 @@
+# nccovid 0.0.3
+* Added a smoother for reporting delays for Alamance and Guilford counties between 1 May and 21 May for the adjusted case metrics.
+* `pull_vaccine_census` now available to pull vaccination rates at the Census Tract
+
+
 # nccovid 0.0.2
 
 * Added logic to account for data dumps from North Carolina with an optional argument in  `get_covid_state` called `report_adj` with a default of `FALSE` to account for two points
