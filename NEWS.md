@@ -1,3 +1,8 @@
+# nccovid 0.0.4
+
+* Added `get_cdc_vax` and `get_cdc_detail` to more easily retrieve information from the CDC on the spread of SARS-CoV-2 by county
+
+
 # nccovid 0.0.3
 * Added a smoother for reporting delays for Alamance and Guilford counties between 1 May and 21 May for the adjusted case metrics.
 * `pull_vaccine_census` now available to pull vaccination rates at the Census Tract

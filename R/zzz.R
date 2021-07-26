@@ -21,6 +21,8 @@ globalVariables({
 		"metric",
 		"population",
 		"week_of",
-		"date_pulled"
+		"date_pulled",
+		"cases_daily_roll",
+		"update_dts"
 	)
 })

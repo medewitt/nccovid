@@ -7,7 +7,10 @@
 pull_vaccine_census(county_pull = NULL)
 }
 \arguments{
-\item{county_pull}{}
+\item{county_pull}{a vector, the counties to select for the query}
+}
+\value{
+a data.table with vaccination rates at the census tract level
 }
 \description{
 The purpose of this function is to pull data provided by NCDHHS

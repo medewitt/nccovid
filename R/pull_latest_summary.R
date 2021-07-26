@@ -2,6 +2,8 @@
 #' 
 #' This pulls the most up to date summary data from the state.
 #' 
+#' @return a data.table with information for North Carolina
+#' 
 #' @export
 #' 
 pull_covid_summary <- function(){

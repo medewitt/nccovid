@@ -6,6 +6,9 @@
 \usage{
 pull_covid_summary()
 }
+\value{
+a data.table with information for North Carolina
+}
 \description{
 This pulls the most up to date summary data from the state.
 }

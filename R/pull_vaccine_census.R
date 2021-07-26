@@ -4,7 +4,9 @@
 #' on vaccination rates by census tract. Additionally, information
 #' on SVI and other demographics is provided
 #' 
-#' @param county_pull 
+#' @param county_pull a vector, the counties to select for the query
+#' 
+#' @return a data.table with vaccination rates at the census tract level
 #' 
 #' @export
 
