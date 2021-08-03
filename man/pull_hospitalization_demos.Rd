@@ -13,3 +13,28 @@ a data.table
 A Helper Function That Pull Hospitalizations by Demographics
 as Posted by NCDHHS
 }
+\examples{
+o <- pull_hospitalization_demos()
+
+age_only <-o[demographic=="Age"&covid_status=="Confirmed"]
+
+age_only <- age_only[date<Sys.Date()-90]
+
+plot(NULL, 
+	 xlim=range(age_only$date), 
+	 ylim=range(age_only$value), ylab="Admissions", 
+	 xlab="Date", main = "Admissions by Age")
+
+buckets <- unique(age_only$category)
+
+my_cols <- c("#00A2B2", "#F1BD51", "#00205C", "#c9c9c9", "#7750A9", "#B7D866", 
+					 "#5C5859", "#DB2B27", "#63CCFF", "#000000", "#123453")
+names(my_cols) <- buckets
+
+for(i in buckets){
+lines(age_only[category==i]$date,
+			age_only[category==i]$value,
+			col = my_cols[[i]])
+}
+
+}
