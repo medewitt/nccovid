@@ -3,6 +3,7 @@
 export("%>%")
 export(aerosol_emission)
 export(calc_risk)
+export(calculate_community_immunity)
 export(calculate_shannon)
 export(decrease_cases)
 export(epi_convolve)

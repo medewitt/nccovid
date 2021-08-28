@@ -1,3 +1,7 @@
+# nccovid 0.0.6
+
+* Added `calculate_community_immunity` in order to estimate the level of community immunity
+
 # nccovid 0.0.4
 
 * Added `get_cdc_vax` and `get_cdc_detail` to more easily retrieve information from the CDC on the spread of SARS-CoV-2 by county
