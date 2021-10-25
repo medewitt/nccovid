@@ -1,3 +1,9 @@
+# nccovid 0.0.7
+
+* Updated `get_covid_state` to reflect the reporting irregularity around September 4th.
+* Updated functions to ensure correct field names were used (hospitalization details)
+* Updated functions around converting growth rates to reproduction numbers
+
 # nccovid 0.0.6
 
 * Added `calculate_community_immunity` in order to estimate the level of community immunity

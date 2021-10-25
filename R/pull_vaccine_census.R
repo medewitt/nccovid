@@ -23,6 +23,10 @@ pull_vaccine_census <- function(county_pull = NULL){
 	
 	combined_vax_svi[,update_dts:=as.Date(update_dts)]
 	
+	combined_vax_svi[county=="",county:=COUNTY]
+	
+	combined_vax_svi[,percent_total:=round(total_vax/total_population*100,1)]
+	
 	if(!is.null(county_pull)){
 		combined_vax_svi <- combined_vax_svi[county %in% county_pull]
 	}

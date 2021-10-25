@@ -42,4 +42,3 @@ calculate_shannon <- function(incidence){
 	
 	epidemic_intensity_norm.i
 }
-

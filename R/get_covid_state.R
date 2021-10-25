@@ -232,6 +232,17 @@ get_covid_state <- function(state = "North Carolina",
 												 	deaths_daily = round(sum(deaths_daily)/4)
 												 ), by = "county"]
 		
+		target_dates <- c(as.Date("2021-09-04"),
+											as.Date("2021-09-05"),
+											as.Date("2021-09-06"),
+											as.Date("2021-09-07")
+		)
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/4),
+												 	deaths_daily = round(sum(deaths_daily)/4)
+												 ), by = "county"]
+		
 		 
 		out_data <- out_data[,`:=`(cases_daily_roll = round(data.table::frollmean(cases_daily, 14))), 
 												 by = "county"]
