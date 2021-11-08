@@ -12,3 +12,4 @@
 ^\.github$
 ^_tags\.yml$
 ^\.lintr$
+^codemeta\.json$

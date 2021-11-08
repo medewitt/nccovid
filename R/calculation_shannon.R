@@ -28,6 +28,8 @@
 
 calculate_shannon <- function(incidence){
 	
+	message("In order to use this function, the entropy package must be available")
+	
 	requireNamespace("entropy")
 	
 	#calculate fraction of total cases for each period

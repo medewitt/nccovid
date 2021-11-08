@@ -1,7 +1,6 @@
 #' Calculating Community Immunity
 #' 
-#' Considering Proportion of the Vaccinated and Those Who Were Naturall
-#' Infected
+#' Considering Proportion of the Vaccinated and Those Who Were Infected
 #' 
 #' @param prop_infected a numeric representing the proportion of the population
 #'     with natural infection
@@ -13,11 +12,11 @@
 #' 
 #' plot(seq(.4,.7,.1),
 #' calculate_community_immunity(prop_infected = seq(.4,.7,.1), 
-#' 														 prop_vaccinated = .5), 
-#' 														 ylab = "Community Immunity", 
-#' 														 xlab = "Proportion Infected",
-#' 														 main = "Community Immunity Given 50% Vaccinated", 
-#' 														 adj =0)
+#' 		prop_vaccinated = .5), 
+#' 		ylab = "Community Immunity", 
+#' 		xlab = "Proportion Infected",
+#' 		main = "Community Immunity Given 50% Vaccinated", 
+#' 		adj =0)
 #' 
 #' }
 #' @source Lopman, B. A. et al. A framework for monitoring population immunity 

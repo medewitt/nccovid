@@ -14,7 +14,7 @@ Authors@R:
            )
 Description: This package allows users to easily retrieve data that have been pulled from the North Carolina
     Department of Health and Human Services Covid-19 Dashboard.
-License: GPL (>= 3)
+License: MIT + file LICENSE
 BugReports: https://github.com/conedatascience/nccovid/issues
 URL: https://github.com/conedatascience/nccovid, https://conedatascience.github.io/nccovid/
 Encoding: UTF-8
@@ -29,8 +29,9 @@ Imports:
     tidyr,
     tigris,
     magrittr,
-    entropy,
-    ggplot2
+    ggplot2,
+    scales
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    entropy
 Config/testthat/edition: 3
