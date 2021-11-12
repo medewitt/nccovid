@@ -244,7 +244,7 @@ get_covid_state <- function(state = "North Carolina",
 												 ), by = "county"]
 		
 		target_dates <- c(as.Date("2021-11-11"),
-											as.Date("2021-11-12"),
+											as.Date("2021-11-12")
 		)
 		wf <- length(target_dates)
 		out_data <- out_data[date%in%target_dates,
