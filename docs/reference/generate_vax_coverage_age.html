@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Regions in Cone Region of Service — cone_region • nccovid</title>
+<title>Vaccine Coverage by Age — generate_vax_coverage_age • nccovid</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,10 @@
 
 
 
-<meta property="og:title" content="Regions in Cone Region of Service — cone_region" />
-<meta property="og:description" content="Regions in Cone Region of Service" />
+<meta property="og:title" content="Vaccine Coverage by Age — generate_vax_coverage_age" />
+<meta property="og:description" content="Generates a graphic that shows the vaccine coverage by age band as a 
+stacked bar chart in order to show the coverage as well as the raw number
+of vaccinated versus unvaccinated individuals." />
 
 
 
@@ -111,21 +113,29 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Regions in Cone Region of Service</h1>
-    <small class="dont-index">Source: <a href='https://github.com/conedatascience/nccovid/blob/master/R/data.R'><code>R/data.R</code></a></small>
-    <div class="hidden name"><code>cone_region.Rd</code></div>
+    <h1>Vaccine Coverage by Age</h1>
+    <small class="dont-index">Source: <a href='https://github.com/conedatascience/nccovid/blob/master/R/generate_vax_coverage_age.R'><code>R/generate_vax_coverage_age.R</code></a></small>
+    <div class="hidden name"><code>generate_vax_coverage_age.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Regions in Cone Region of Service</p>
+    <p>Generates a graphic that shows the vaccine coverage by age band as a 
+stacked bar chart in order to show the coverage as well as the raw number
+of vaccinated versus unvaccinated individuals.</p>
     </div>
 
-    <pre class="usage"><span class='va'>cone_region</span></pre>
+    <pre class="usage"><span class='fu'>generate_vax_coverage_age</span><span class='op'>(</span>county_use <span class='op'>=</span> <span class='fu'>nccovid</span><span class='fu'>::</span><span class='va'><a href='cone_region.html'>cone_region</a></span><span class='op'>)</span></pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>county_use</th>
+      <td><p>a string vector representing the North Carolina
+counties to be displayed</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>a vector</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -32,7 +32,7 @@ would be updated Monday - Friday. Updated for Good Friday in which no results
 were posted.}
 }
 \description{
-This functions hits the Johns Hopkins Covid Data Respository
+This functions hits the Johns Hopkins Covid Data Repository
 and filters down to North Carolina Data. Alternatively, it can
 retrieve any state.
 }

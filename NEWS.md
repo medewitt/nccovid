@@ -1,3 +1,8 @@
+# nccovid 0.0.8
+
+* Fix Veteran's Day reporting lag
+* Added a basic herd immunity calculation function in the form of `hit`
+
 # nccovid 0.0.7
 
 * Updated `get_covid_state` to reflect the reporting irregularity around September 4th.

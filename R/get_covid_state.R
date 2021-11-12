@@ -1,6 +1,6 @@
 #' Retrieve Covid19 Data
 #' 
-#' This functions hits the Johns Hopkins Covid Data Respository
+#' This functions hits the Johns Hopkins Covid Data Repository
 #' and filters down to North Carolina Data. Alternatively, it can
 #' retrieve any state.
 #' 
@@ -243,9 +243,25 @@ get_covid_state <- function(state = "North Carolina",
 												 	deaths_daily = round(sum(deaths_daily)/4)
 												 ), by = "county"]
 		
+		target_dates <- c(as.Date("2021-11-11"),
+											as.Date("2021-11-12"),
+		)
+		wf <- length(target_dates)
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/wf),
+												 	deaths_daily = round(sum(deaths_daily)/wf)
+												 ), by = "county"]
+		
 		 
 		out_data <- out_data[,`:=`(cases_daily_roll = round(data.table::frollmean(cases_daily, 14))), 
 												 by = "county"]
+		
+		out_data <- out_data[,`:=`(cases_daily_roll_sum = round(data.table::frollsum(cases_daily, 7))), 
+												 by = "county"]
+		
+		# Due to a reporting issue the state started to put many cases from months prior
+		# into the dailies.
 		
 		start_smooth <- as.Date("2021-05-01")
 		end_smooth <- as.Date("2021-05-21")
