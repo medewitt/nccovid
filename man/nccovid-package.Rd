@@ -6,8 +6,7 @@
 \alias{nccovid-package}
 \title{nccovid: Pull North Carolina Covid-19 Outbreak Information}
 \description{
-This package allows users to easily retrieve data that have been pulled from the North Carolina
-    Department of Health and Human Services Covid-19 Dashboard.
+This package allows users to easily retrieve data that have been pulled from the North Carolina Department of Health and Human Services Covid-19 Dashboard.
 }
 \seealso{
 Useful links:

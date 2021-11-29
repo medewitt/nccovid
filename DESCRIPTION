@@ -1,6 +1,6 @@
 Package: nccovid
 Title: Pull North Carolina Covid-19 Outbreak Information
-Version: 0.0.8
+Version: 0.0.9
 Authors@R: 
     c(person(given = "Michael",
            family = "DeWitt",
@@ -19,7 +19,7 @@ BugReports: https://github.com/conedatascience/nccovid/issues
 URL: https://github.com/conedatascience/nccovid, https://conedatascience.github.io/nccovid/
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2.9000
 Depends:
     R (>= 2.10)
 Imports: 

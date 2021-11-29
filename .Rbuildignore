@@ -13,3 +13,4 @@
 ^_tags\.yml$
 ^\.lintr$
 ^codemeta\.json$
+^scripts$
