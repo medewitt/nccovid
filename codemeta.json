@@ -8,7 +8,7 @@
   "description": "This package allows users to easily retrieve data that have been pulled from the North Carolina Department of Health and Human Services Covid-19 Dashboard.",
   "name": "nccovid: Pull North Carolina Covid-19 Outbreak Information",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -184,7 +184,7 @@
   "codeRepository": "https://github.com/conedatascience/nccovid",
   "releaseNotes": "https://github.com/conedatascience/nccovid/blob/master/NEWS.md",
   "readme": "https://github.com/conedatascience/nccovid/blob/master/README.md",
-  "fileSize": "156.032KB",
+  "fileSize": "156.375KB",
   "contIntegration": "https://github.com/conedatascience/nccovid/actions",
   "developmentStatus": "https://www.tidyverse.org/lifecycle/#experimental",
   "citation": [
