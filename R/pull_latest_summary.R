@@ -25,7 +25,7 @@ pull_covid_summary <- function(){
 	
 	dat_death = nccovid::get_covid_state(reporting_adj = TRUE)[,list(daily_deaths = sum(deaths_daily)), by = "date"]
 	
-	dat = merge(dat, dat_death, by = "date")
+	dat = merge(dat, dat_death, by = "date", all.x = TRUE)
 	
 	return(dat)
 	
