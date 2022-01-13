@@ -1,3 +1,7 @@
+# nccovid 0.0.13
+
+* Speed up google mobility function calls
+
 # nccovid 0.0.8
 
 * Fix Veteran's Day reporting lag
