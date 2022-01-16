@@ -3,9 +3,10 @@
 #' Mobility data for North Carolina Counties. It's a bit faster than
 #' `get_google_mobility` which downloads the entire csv for the world
 #' 
-#' @param counties a string vector of the desired counties deafult of \code{NULL}
+#' @param counties a string vector of the desired counties default of \code{NULL}
 #'     returns all counties.
 #' @param state_in a string vector representing state or states of interest
+#' @importFrom utils download.file unzip
 #' @export
 #' 
 
@@ -24,11 +25,13 @@ get_google_mobility2 <- function(counties= NULL, state_in = "North Carolina"){
 	zipped_csv_names <- grep('_US_Region_Mobility_Report.csv$', unzip(tmp, list=TRUE)$Name, 
 													 ignore.case=TRUE, value=TRUE)
 	unzip(tmp, files=zipped_csv_names)
-	require(data.table)
-	comb_tbl <- rbindlist(lapply(zipped_csv_names,  
-															 function(x) cbind(fread(x, sep=',', header=TRUE,
+	
+	comb_tbl <- data.table::rbindlist(lapply(zipped_csv_names,  
+															 function(x) cbind(data.table::fread(x, sep=',', header=TRUE,
 															 												stringsAsFactors=FALSE),
 															 									file_nm=x)), fill=TRUE ) 
+	
+	unlink(zipped_csv_names)
 	
 	us_mobility_data <- comb_tbl %>%
 		#dplyr::filter(sub_region_1 %in% state.name, grepl('County',sub_region_2)) %>%
@@ -63,16 +66,16 @@ get_google_mobility2 <- function(counties= NULL, state_in = "North Carolina"){
 																							variable == 'transit_stations'~"Transit Stations",
 																							variable == 'workplaces'~"Work Places",
 																							variable == 'residential'~'Residential')) %>% 
-		group_by(state,county, variable) %>% 
-		arrange(date) %>% 
-		mutate(rolling = frollmean(value, 7)) %>% 
-		ungroup()
+		dplyr::group_by(state,county, variable) %>% 
+		dplyr::arrange(date) %>% 
+		dplyr::mutate(rolling = data.table::frollmean(value, 7)) %>% 
+		dplyr::ungroup()
 	
 	
 	
 	
 	mobility_cone_longitudinal <- us_mobility_data_long %>%
-		filter(county %in% counties) %>% 
+		dplyr::filter(county %in% counties) %>% 
 		dplyr::mutate(county = trimws(stringr::str_remove(string = county, "County"), "both"))
 	
 	return(mobility_cone_longitudinal)

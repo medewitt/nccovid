@@ -38,18 +38,17 @@ generate_vax_coverage_age <- function(county_use = nccovid::cone_region){
 	vax_use[,vax_per := vax_cum/population]
 	
 	vax_title_bar <- vax_use[week_of==max(week_of)][
-		,.(TotalVaxRate = sum(vax_cum)/sum(population)), by = "county"
+		,list(TotalVaxRate = sum(vax_cum)/sum(population)), by = "county"
 	][,TitleText:=sprintf("%s %s%% Overall Vaccinated",
 												county, round(TotalVaxRate*100))]
 	
 	vax_perc_graph<- vax_use[week_of==max(week_of)][
-		,.(GroupVaxRate = round(sum(vax_cum)/sum(population)*100)), 
+		,list(GroupVaxRate = round(sum(vax_cum)/sum(population)*100)), 
 		by = c("county", "age_group")][,VaxGroupPerc:=sprintf("%s%%", GroupVaxRate)]
 	
 	vax_perc_graph <- merge(vax_perc_graph,vax_title_bar, by = "county", all.x= TRUE)
 	
-	vax_long_version <- vax_use%>%
-		.[week_of==max(week_of)] %>% 
+	vax_long_version <- vax_use[week_of==max(week_of)] %>% 
 		dplyr::select(county,age_group, `Unvaccinated` = un_vax_cum, `Vaccinated`= vax_cum) %>% 
 		tidyr::gather(metric, value, -county, -age_group) %>% 
 		dplyr::left_join(vax_title_bar, by = "county") %>% 

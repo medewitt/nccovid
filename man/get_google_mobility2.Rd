@@ -10,7 +10,7 @@ Mobility data for North Carolina Counties. It's a bit faster than
 get_google_mobility2(counties = NULL, state_in = "North Carolina")
 }
 \arguments{
-\item{counties}{a string vector of the desired counties deafult of \code{NULL}
+\item{counties}{a string vector of the desired counties default of \code{NULL}
 returns all counties.}
 
 \item{state_in}{a string vector representing state or states of interest}

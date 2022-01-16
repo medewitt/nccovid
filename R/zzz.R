@@ -42,7 +42,18 @@ globalVariables({
 		"Date",
 		"Global",
 		"covid_status",
-		"percent_total"
+		"percent_total",
+		"two_doses_or_one_dose_jj_population",
+		"primary_series_n",
+		"people_vaccinated_with_two_doses_or_one_dose_jj",
+		"vax_cum",
+		"un_vax_cum",
+		"vax_per",
+		"TitleText",
+		"VaxGroupPerc",
+		"GroupVaxRate",
+		"TotalVaxRate",
+		"county_names"
 	)
 })
 
