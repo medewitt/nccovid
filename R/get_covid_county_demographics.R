@@ -37,6 +37,8 @@ get_county_covid_demographics <- function(demographic = "age_group", region = NU
 	
 	dat <- clean_names(dat)
 	
+	data.table::setnames(dat, "hispanic", "ethnicity")
+	
 	dat[,demographic:=gsub(" |-","_",tolower(demographic))]
 	dat[,demographic:=ifelse(demographic=="age_group_b_k_12", "k_12", demographic)]
 	
