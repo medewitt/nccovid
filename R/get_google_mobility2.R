@@ -78,6 +78,8 @@ get_google_mobility2 <- function(counties= NULL, state_in = "North Carolina"){
 		dplyr::filter(county %in% counties) %>% 
 		dplyr::mutate(county = trimws(stringr::str_remove(string = county, "County"), "both"))
 	
+	on.exit(unlink(zipped_csv_names))
+	
 	return(mobility_cone_longitudinal)
 	
 }

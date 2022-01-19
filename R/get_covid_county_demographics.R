@@ -32,8 +32,11 @@ get_county_covid_demographics <- function(demographic = "age_group", region = NU
 	url <- "https://raw.githubusercontent.com/conedatascience/covid-data/master/data/timeseries/county-demographics.csv"
 	dat <- data.table::fread(url, na.strings = "")
 	
-	names(dat) <- c("demographic", "race", "age_group", "deaths", "gender", "week_of", 
-									"county", "ethnicity", "cases")
+	#names(dat) <- c("demographic", "race", "age_group", "deaths", "gender", "week_of", 
+	#								"county", "ethnicity", "cases")
+	
+	dat <- clean_names(dat)
+	
 	dat[,demographic:=gsub(" |-","_",tolower(demographic))]
 	dat[,demographic:=ifelse(demographic=="age_group_b_k_12", "k_12", demographic)]
 	

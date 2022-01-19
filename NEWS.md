@@ -1,3 +1,9 @@
+# nccovid 0.0.14
+
+* Fixed holidays through July 4th of 2022
+* Fixed a column ordering issue with `get_covid_county_demographics`
+* Fixed error introduced in `get_google_mobility2`
+
 # nccovid 0.0.13
 
 * Speed up google mobility function calls

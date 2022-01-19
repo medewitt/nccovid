@@ -1,6 +1,6 @@
 Package: nccovid
 Title: Pull North Carolina Covid-19 Outbreak Information
-Version: 0.0.13
+Version: 0.0.14
 Authors@R: 
     c(person(given = "Michael",
            family = "DeWitt",

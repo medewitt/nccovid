@@ -273,6 +273,45 @@ get_covid_state <- function(state = "North Carolina",
 												 	deaths_daily = round(sum(deaths_daily)/wf)
 												 ), by = "county"]
 		
+		target_dates <- seq.Date(as.Date("2022-01-15"),
+														 as.Date("2022-01-18"), by = "day")
+		
+		wf <- length(target_dates)
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/wf),
+												 	deaths_daily = round(sum(deaths_daily)/wf)
+												 ), by = "county"]
+		
+		target_dates <- seq.Date(as.Date("2022-02-19"),
+														 as.Date("2022-02-22"), by = "day")
+		
+		wf <- length(target_dates)
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/wf),
+												 	deaths_daily = round(sum(deaths_daily)/wf)
+												 ), by = "county"]
+		
+		target_dates <- seq.Date(as.Date("2022-05-28"),
+														 as.Date("2022-05-31"), by = "day")
+		
+		wf <- length(target_dates)
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/wf),
+												 	deaths_daily = round(sum(deaths_daily)/wf)
+												 ), by = "county"]
+		
+		target_dates <- seq.Date(as.Date("2022-07-02"),
+														 as.Date("2022-07-05"), by = "day")
+		
+		wf <- length(target_dates)
+		out_data <- out_data[date%in%target_dates,
+												 `:=`(
+												 	cases_daily = round(sum(cases_daily)/wf),
+												 	deaths_daily = round(sum(deaths_daily)/wf)
+												 ), by = "county"]
 		 
 		out_data <- out_data[,`:=`(cases_daily_roll = round(data.table::frollmean(cases_daily, 14))), 
 												 by = "county"]
