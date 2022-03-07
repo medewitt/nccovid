@@ -1,6 +1,6 @@
 Package: nccovid
 Title: Pull North Carolina Covid-19 Outbreak Information
-Version: 0.0.14
+Version: 0.0.15
 Authors@R: 
     c(person(given = "Michael",
            family = "DeWitt",
@@ -33,5 +33,7 @@ Imports:
     scales
 Suggests: 
     testthat (>= 3.0.0),
-    entropy
+    entropy,
+    broom,
+    purrr
 Config/testthat/edition: 3

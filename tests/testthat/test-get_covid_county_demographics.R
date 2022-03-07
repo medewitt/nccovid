@@ -1,6 +1,8 @@
 run_regression <- function(){
+	skip_if_not_installed("broom")
 	dat <- nccovid::get_county_covid_demographics(region = c(nccovid::cone_region, "Forsyth"))
 	
+	requireNamespace("broom", quietly = TRUE)
 	# dat = dat[,.(cases = sum(cases),
 	#        deaths = sum(deaths)), by =c("week_of", "metric")]
 	

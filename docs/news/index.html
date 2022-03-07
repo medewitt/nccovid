@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nccovid</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.15</span>
       </span>
     </div>
 
@@ -48,39 +48,76 @@
     </div>
 
     <div class="section level2">
+<h2 class="page-header" data-toc-text="0.0.15" id="nccovid-0015">nccovid 0.0.15<a class="anchor" aria-label="anchor" href="#nccovid-0015"></a></h2>
+<ul><li>Ensure that smoothing of the daily rates continues for several years
+(into 2025)</li>
+</ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.0.14" id="nccovid-0014">nccovid 0.0.14<a class="anchor" aria-label="anchor" href="#nccovid-0014"></a></h2>
+<ul><li>Fixed holidays through July 4th of 2022</li>
+<li>Fixed a column ordering issue with
+<code>get_covid_county_demographics</code>
+</li>
+<li>Fixed error introduced in <code>get_google_mobility2</code>
+</li>
+</ul></div>
+    <div class="section level2">
+<h2 class="page-header" data-toc-text="0.0.13" id="nccovid-0013">nccovid 0.0.13<a class="anchor" aria-label="anchor" href="#nccovid-0013"></a></h2>
+<ul><li>Speed up google mobility function calls</li>
+</ul></div>
+    <div class="section level2">
 <h2 class="page-header" data-toc-text="0.0.8" id="nccovid-008">nccovid 0.0.8<a class="anchor" aria-label="anchor" href="#nccovid-008"></a></h2>
 <ul><li>Fix Veteran’s Day reporting lag</li>
-<li>Added a basic herd immunity calculation function in the form of <code>hit</code>
+<li>Added a basic herd immunity calculation function in the form of
+<code>hit</code>
 </li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.0.7" id="nccovid-007">nccovid 0.0.7<a class="anchor" aria-label="anchor" href="#nccovid-007"></a></h2>
-<ul><li>Updated <code>get_covid_state</code> to reflect the reporting irregularity around September 4th.</li>
-<li>Updated functions to ensure correct field names were used (hospitalization details)</li>
-<li>Updated functions around converting growth rates to reproduction numbers</li>
+<ul><li>Updated <code>get_covid_state</code> to reflect the reporting
+irregularity around September 4th.</li>
+<li>Updated functions to ensure correct field names were used
+(hospitalization details)</li>
+<li>Updated functions around converting growth rates to reproduction
+numbers</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.0.6" id="nccovid-006">nccovid 0.0.6<a class="anchor" aria-label="anchor" href="#nccovid-006"></a></h2>
-<ul><li>Added <code>calculate_community_immunity</code> in order to estimate the level of community immunity</li>
+<ul><li>Added <code>calculate_community_immunity</code> in order to estimate
+the level of community immunity</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.0.4" id="nccovid-004">nccovid 0.0.4<a class="anchor" aria-label="anchor" href="#nccovid-004"></a></h2>
-<ul><li>Added <code>get_cdc_vax</code> and <code>get_cdc_detail</code> to more easily retrieve information from the CDC on the spread of SARS-CoV-2 by county</li>
+<ul><li>Added <code>get_cdc_vax</code> and <code>get_cdc_detail</code> to
+more easily retrieve information from the CDC on the spread of
+SARS-CoV-2 by county</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.0.3" id="nccovid-003">nccovid 0.0.3<a class="anchor" aria-label="anchor" href="#nccovid-003"></a></h2>
-<ul><li>Added a smoother for reporting delays for Alamance and Guilford counties between 1 May and 21 May for the adjusted case metrics.</li>
+<ul><li>Added a smoother for reporting delays for Alamance and Guilford
+counties between 1 May and 21 May for the adjusted case metrics.</li>
 <li>
-<code>pull_vaccine_census</code> now available to pull vaccination rates at the Census Tract</li>
+<code>pull_vaccine_census</code> now available to pull vaccination
+rates at the Census Tract</li>
 </ul></div>
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.0.2" id="nccovid-002">nccovid 0.0.2<a class="anchor" aria-label="anchor" href="#nccovid-002"></a></h2>
-<ul><li>Added logic to account for data dumps from North Carolina with an optional argument in <code>get_covid_state</code> called <code>report_adj</code> with a default of <code>FALSE</code> to account for two points
+<ul><li>Added logic to account for data dumps from North Carolina with an
+optional argument in <code>get_covid_state</code> called
+<code>report_adj</code> with a default of <code>FALSE</code> to account
+for two points
 <ul><li>2020-09-25 when all antigen tests were added</li>
-<li>2020-11-13/2020-11-14 when data collection times changed and only 10 hours of data were collect.</li>
+<li>2020-11-13/2020-11-14 when data collection times changed and only 10
+hours of data were collect.</li>
 </ul></li>
-<li>Added <code>get_hospitalizations</code> to retrieve hospitalisation data</li>
-<li>Added North Carolina Healthcare Preparation Coalitions as a data set The current method just imputes the previous days value for September for the death and case incidence on 25 September. For the November reporting change the 13/14 days are averaged across the two days. This should smooth out any reporting irregularity. This is important for calculating R or any other metrics that rely on daily data.</li>
+<li>Added <code>get_hospitalizations</code> to retrieve hospitalisation
+data</li>
+<li>Added North Carolina Healthcare Preparation Coalitions as a data set
+The current method just imputes the previous days value for September
+for the death and case incidence on 25 September. For the November
+reporting change the 13/14 days are averaged across the two days. This
+should smooth out any reporting irregularity. This is important for
+calculating R or any other metrics that rely on daily data.</li>
 </ul></div>
   </div>
 
@@ -96,7 +133,8 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+1.9000.9000.9000.</p>
 </div>
 
       </footer></div>

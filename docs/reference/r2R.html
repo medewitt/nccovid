@@ -19,7 +19,7 @@ generation time."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nccovid</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.15</span>
       </span>
     </div>
 
@@ -56,9 +56,8 @@ to a reproduction number (R) given a particular
 generation time.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">r2R</span><span class="op">(</span><span class="va">r</span>, mu_gamma <span class="op">=</span> <span class="fl">4.7</span>, sd_gamma <span class="op">=</span> <span class="fl">2.9</span><span class="op">)</span></code></pre></div>
+    <div id="ref-usage">Usage,<div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">r2R</span><span class="op">(</span><span class="va">r</span>, mu_gamma <span class="op">=</span> <span class="fl">4.7</span>, sd_gamma <span class="op">=</span> <span class="fl">2.9</span><span class="op">)</span></code></pre></div></div>
 
-    <div id="ref-sections">
     <div id="source">
     <h2>Source</h2>
     <p><a href="https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0144" class="external-link">https://royalsocietypublishing.org/doi/10.1098/rsif.2020.0144</a></p>
@@ -74,18 +73,17 @@ gamma function characterizing the generation time.</p></dd>
 <dd><p>a double representing standard deviation of the 
 gamma function characterizing the generation time.</p></dd>
 </dl></div>
-    </div>
 
-    <div id="examples">
+    <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="ref-examples sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
 <span class="r-in"><span class="va">cases</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Poisson.html" class="external-link">rpois</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">2.5</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">t</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
 <span class="r-in"><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">cases</span> <span class="op">~</span> <span class="va">t</span>, family <span class="op">=</span> <span class="st">"poisson"</span><span class="op">)</span></span>
 <span class="r-in"></span>
 <span class="r-in"><span class="fu">r2R</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fit</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         t </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 0.9077594 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        t </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 0.759288 </span>
 <span class="r-in"></span>
 <span class="r-in"></span>
 <span class="r-in"></span>
@@ -103,7 +101,8 @@ gamma function characterizing the generation time.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.9000.9000.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>
+1.9000.9000.9000.</p>
 </div>
 
       </footer></div>

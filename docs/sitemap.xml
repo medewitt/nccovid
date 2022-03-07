@@ -46,6 +46,9 @@
     <loc>/reference/decrease_cases.html</loc>
   </url>
   <url>
+    <loc>/reference/effective_ve_wane.html</loc>
+  </url>
+  <url>
     <loc>/reference/epi_convolve.html</loc>
   </url>
   <url>
@@ -80,6 +83,9 @@
   </url>
   <url>
     <loc>/reference/get_google_mobility.html</loc>
+  </url>
+  <url>
+    <loc>/reference/get_google_mobility2.html</loc>
   </url>
   <url>
     <loc>/reference/get_hospitalizations.html</loc>
