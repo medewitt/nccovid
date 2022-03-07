@@ -187,8 +187,8 @@ get_covid_state <- function(state = "North Carolina",
 												 	deaths_daily = round(sum(deaths_daily)/2)
 												 ), by = "county"]
 		
-		dat_range_saturday = seq.Date(from = as.Date("2021-03-27"), length.out = 50, by = "week")
-		dat_range_monday = seq.Date(from = as.Date("2021-03-29"), length.out = 50, by = "week")
+		dat_range_saturday = seq.Date(from = as.Date("2021-03-27"), length.out = 300, by = "week")
+		dat_range_monday = seq.Date(from = as.Date("2021-03-29"), length.out = 300, by = "week")
 		
 		for(i in seq_along(dat_range_saturday)){
 			target_dates = seq.Date(dat_range_saturday[i], dat_range_monday[i], by = "day")

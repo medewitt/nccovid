@@ -1,3 +1,7 @@
+# nccovid 0.0.15
+
+* Ensure that smoothing of the daily rates continues for several years (into 2025)
+
 # nccovid 0.0.14
 
 * Fixed holidays through July 4th of 2022
