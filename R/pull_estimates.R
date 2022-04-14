@@ -12,7 +12,11 @@
 
 pull_estimates <- function(region= NULL, variable ="R"){
 	
-	raw_dat <- data.table::fread("https://raw.githubusercontent.com/medewitt/refresh-restimates/master/output/latest_r_coviddata.csv",
+	# old_url <- "https://raw.githubusercontent.com/medewitt/refresh-restimates/master/output/latest_r_coviddata.csv"
+	
+	url <- 'https://datascience2.conehealth.com/assets/covid/latest_r_coviddata.csv'
+	
+	raw_dat <- data.table::fread(url,
 															 colClasses = c(
 															 	"character",
 															 	"Date",
