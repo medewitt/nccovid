@@ -1,3 +1,8 @@
+# nccovid 0.0.16
+
+* **BUGFIX**: Update pull_covid_summary() for new
+"Reinfection Cases by Speciman Date" column in the raw data.
+
 # nccovid 0.0.15
 
 * Ensure that smoothing of the daily rates continues for several years (into 2025)
