@@ -35,7 +35,7 @@
 "nc_svi_county"
 
 #' North Carolina Population by County by Age
-#' @source ACS2018 Metrics
+#' @source ACS2020 Metrics
 #'@format a data.frame
 "nc_pop_age"
 
@@ -45,7 +45,7 @@
 "nc_events"
 
 #' NC Population by NCDHHS Age Band
-#' @source 2018 ACS Survey
+#' @source 2020 ACS Survey
 #' @format a data.frame
 
 "nc_pop_dhhs"
@@ -56,7 +56,7 @@
 "nc_county_fips"
 
 #' NC Biological Sex Information by County
-#' @source American Community Survey (2018 Vintage)
+#' @source American Community Survey (2020 Vintage)
 #' @format a data.frame, with NC DHHS county level demographic metrics
 "nc_county_demos"
 

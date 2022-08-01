@@ -14,8 +14,10 @@ pull_estimates <- function(region= NULL, variable ="R"){
 	
 	# old_url <- "https://raw.githubusercontent.com/medewitt/refresh-restimates/master/output/latest_r_coviddata.csv"
 	
-	url <- 'https://datascience2.conehealth.com/assets/covid/latest_r_coviddata.csv'
+	# new r estimates via cori et al
+	url <- "https://github.com/conedatascience/r-estimates-cori/blob/main/output/latest_r_coviddata.csv?raw=true"
 	
+
 	raw_dat <- data.table::fread(url,
 															 colClasses = c(
 															 	"character",

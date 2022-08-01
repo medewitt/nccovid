@@ -8,14 +8,16 @@ nc_population <- nc_population[!is.na(july_2020)]
 
 usethis::use_data(nc_population, overwrite = TRUE)
 
-# population per ncdhhs ---------------------------------------------------
+# population per ncdhhs (latest acs) ---------------------------------------------------
 library(tidyverse)
-conn <- DBI::dbConnect(odbc::odbc(), "DS_Team")
+conn <- DBI::dbConnect(odbc::odbc(), "CBIEADS1")
 
 county_info <- DBI::dbReadTable(conn = conn,
 																DBI::Id(schema = "demographics",
 																				table = "acs_county"))
 DBI::dbDisconnect(conn)
+
+county_info <- county_info %>% filter(State == 'North Carolina')
 
 nc_pop_group <- county_info %>%
 	select(contains("NBR")) %>%

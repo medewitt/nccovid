@@ -1,3 +1,8 @@
+# nccovid 0.0.17
+
+* Updating population estimates from 2018 ACS to 2020 ACS.
+* Pointing reproduction number pulls (`pull_estimates`) to new Cori et al estimates in [r-estimates-cori github repository](https://github.com/conedatascience/r-estimates-cori)
+
 # nccovid 0.0.16
 
 * **BUGFIX**: Update pull_covid_summary() for new

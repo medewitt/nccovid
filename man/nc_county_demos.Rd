@@ -8,7 +8,7 @@
 a data.frame, with NC DHHS county level demographic metrics
 }
 \source{
-American Community Survey (2018 Vintage)
+American Community Survey (2020 Vintage)
 }
 \usage{
 nc_county_demos

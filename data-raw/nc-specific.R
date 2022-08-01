@@ -117,7 +117,7 @@ cone_region <- c("Alamance", "Rockingham", "Randolph", "Guilford")
 
 usethis::use_data(cone_region)
 
-fatality_estimates %>%
+nc_fatality_estimates %>%
 	filter(NAME %in% c("Guilford", "Alamance", "Rockingham")) %>%
 	select(starts_with("pct"), NAME) %>%
 	gather(metric, value, -NAME) %>%
