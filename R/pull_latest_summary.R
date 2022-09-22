@@ -14,10 +14,12 @@ pull_covid_summary <- function(){
 										"Antigen Test", "Positive Test Percentage", "Daily Tests Total", 
 										"Deaths by Date of Death", "Molecular (PCR) Positive Cases by Specimen Date", 
 										"Date", "Molecular Test",
-										"Reinfection Cases by Specimen Date")
+										"Reinfection Cases by Specimen Date", 
+										'Total Cases That Were Reinfections') # new reinfection name
 	replace_names <- c("cases_reported", "cases_antigen", "n_antigen_tests", 
 										 "positive_tests", "n_tests", "deaths_by_date", "cases_pcr", 
 										 "date", "n_pcr_tests",
+										 "reinfection_cases",
 										 "reinfection_cases")
 
 	for(i in seq_along(dat)){
