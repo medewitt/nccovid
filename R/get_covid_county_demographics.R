@@ -49,7 +49,8 @@ get_county_covid_demographics <- function(demographic = "age_group", region = NU
 	dat = dat[,list(week_of, county, demographic,metric = get(field), cases, deaths)]
 	
 	dat[,`:=` (cases = ifelse(is.na(cases),0,cases),
-						 deaths = ifelse(is.na(deaths),0,deaths))]
+						 deaths = ifelse(is.na(deaths),0,deaths),
+						 county = gsub(' County', '', county, fixed = TRUE))]
 	
 	if(!is.null(region)){
 		dat = dat[county %in% region]
