@@ -1,3 +1,7 @@
+# nccovid 0.0.18
+
+* Fix get_county_covid_demographics() where updated state data added ' County' to the names of the counties
+
 # nccovid 0.0.17
 
 * Updating population estimates from 2018 ACS to 2020 ACS.
