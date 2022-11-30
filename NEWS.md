@@ -1,3 +1,7 @@
+# nccovid 0.0.19
+
+* get_cdc_detail() downloads data directly from cdc on call instead of pulling from repo
+
 # nccovid 0.0.18
 
 * Fix get_county_covid_demographics() where updated state data added ' County' to the names of the counties
