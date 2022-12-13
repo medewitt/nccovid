@@ -42,6 +42,12 @@ get_county_covid_demographics <- function(demographic = "age_group", region = NU
 	dat[,demographic:=gsub(" |-","_",tolower(demographic))]
 	dat[,demographic:=ifelse(demographic=="age_group_b_k_12", "k_12", demographic)]
 	
+	#changed deaths to report monthly, assign them to a week (NCDHHS dates are Saturday)
+	dat[, `:=`(week_of, ifelse(is.na(week_of), 
+														 lubridate::floor_date(month_of, 'week', week_start = 6),
+														 week_of))]
+	class(dat$week_of) <- 'Date'
+	
 	dat = dat[demographic==field & !is.na(week_of)]
 	#dat$date <- as.Date(dat$date, "%m/%d/%Y")
 	
@@ -51,6 +57,10 @@ get_county_covid_demographics <- function(demographic = "age_group", region = NU
 	dat[,`:=` (cases = ifelse(is.na(cases),0,cases),
 						 deaths = ifelse(is.na(deaths),0,deaths),
 						 county = gsub(' County', '', county, fixed = TRUE))]
+	
+	dat <- dat[,list(cases = sum(cases),
+									 deaths = sum(deaths)), 
+						 by = c('week_of', 'county', 'demographic', 'metric')]
 	
 	if(!is.null(region)){
 		dat = dat[county %in% region]

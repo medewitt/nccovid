@@ -1,3 +1,7 @@
+# nccovid 0.0.20
+
+* bug fix: get_covid_county_demographics() was not reporting deaths anymore after NCDHHS changed to a monthly instead of weekly report on deaths
+
 # nccovid 0.0.19
 
 * get_cdc_detail() downloads data directly from cdc on call instead of pulling from repo
