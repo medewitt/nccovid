@@ -19,8 +19,8 @@ get_hospitalizations <- function(){
 																	 'influenza_confirmed_patients_admitted___last_24_hours'),
 													 
 													 old = c('date', 'full_adult_icu_covid19_positive_patients', 'coalition',
-													 				'inpatient_empty_beds_all_types', 'adult_icu_empty', 
-													 				'inpatient_full_all_bed_types', 'adult_icu_ful',
+													 				'inpatient_empty_(beds_all_types)', 'adult_icu_empty', 
+													 				'inpatient_full_(all_bed_types)', 'adult_icu_ful',
 													 				'number_of_covid_19_positive_patients_in_hospital',
 													 				'at_admission_confirmed_covid19_patients_in_24_hrs', 
 													 				'hospitalized_and_ventilated_covid_inpatient_count', 
@@ -48,7 +48,7 @@ get_hospitalizations <- function(){
 		
 		
 		# calculate capacity
-	dat$total_staffed_inpatient_capacity_all_bed_types <- dat$inpatient_empty_staffed_beds + dat$inpatient_beds_in_use
+	dat$`total_staffed_inpatient_capacity_(all_bed_types)` <- dat$inpatient_empty_staffed_beds + dat$inpatient_beds_in_use
 	dat$adult_intensive_care_unit_staffed_bed_capacity <- dat$icu_beds_in_use + dat$icu_empty_staffed_beds
 	
 	#replace new names with old names
