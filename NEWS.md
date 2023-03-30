@@ -1,3 +1,7 @@
+# nccovid 0.0.21
+
+* ncdhhs removed data and changed column names in dataset used in get_hospitalizations() function, some columns are now unavailable and others have been renamed to their previous names for back compatibility.
+
 # nccovid 0.0.20
 
 * bug fix: get_covid_county_demographics() was not reporting deaths anymore after NCDHHS changed to a monthly instead of weekly report on deaths
