@@ -14,9 +14,9 @@ get_hospitalizations <- function(){
 																	 'inpatient_empty_staffed_beds', 'icu_empty_staffed_beds', 
 																	 'inpatient_beds_in_use', 'icu_beds_in_use', 
 																	 'covid_19_hospitalizations', 
-																	 'covid_19_confirmed_patients_admitted_last_24_hours',
+																	 'covid_19_confirmed_patients_admitted___last_24_hours',
 																	 'hospitalized_and_ventilated_covid_19_inpatient_count',
-																	 'influenza_confirmed_patients_admitted_last_24_hours'),
+																	 'influenza_confirmed_patients_admitted___last_24_hours'),
 													 
 													 old = c('date', 'full_adult_icu_covid19_positive_patients', 'coalition',
 													 				'inpatient_empty_beds_all_types', 'adult_icu_empty', 
