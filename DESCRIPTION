@@ -27,7 +27,6 @@ Imports:
     dplyr,
     stringr,
     tidyr,
-    tigris,
     magrittr,
     ggplot2,
     scales
@@ -35,5 +34,6 @@ Suggests:
     testthat (>= 3.0.0),
     entropy,
     broom,
-    purrr
+    purrr,
+    tigris
 Config/testthat/edition: 3
